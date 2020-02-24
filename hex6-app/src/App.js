@@ -5,6 +5,7 @@ import SegmentExampleRaised from "./components/TripList/TripList.js"
 
 import { BrowserRouter, NavLink, Switch, Route} from "react-router-dom";
 
+import CenteredGrid from "./components/TripList/TripList"
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         
         <div className="container">
           <Switch>
-            <Route path="/components/TripList" component={SegmentExampleRaised} />
+            <Route path="/components/TripList" component={CenteredGrid} />
           </Switch>
         </div>
         </BrowserRouter>

@@ -1,17 +1,28 @@
 import React from 'react';
 import style from './TripList.module.css';
+import tripListData from './TripListData.js'
 
+import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
 
-const SegmentExampleRaised = () => {
+import ScrollDialog from './MoreDetailsButton';
+import ShortDescription from './ShortDescription'
+
+export default function CenteredGrid() {
   return (
-    <div className={style.segmentExampleRaised }>
-      <p>Lorrem ipsum ....</p>
-      <p>Lorrem ipsum ....</p>
-      <p>Lorrem ipsum ....</p>
-      <p>Lorrem ipsum ....</p>
-      <p>Lorrem ipsum ....</p>
-    </div>
-  )
-};
+    <>  
+      {tripListData.map(item => (
+        <Paper elevation={3} className={style.paper} key={item.id}>
+          <Container maxWidth="sm" className={style.cityNameContainer}> 
+            <div>{item.city} </div>
+          </Container>
+          <Container maxWidth="sm" className={style.descriptionContainer}> 
+            <ShortDescription tripListData={item}/>
+          </Container>
+          <ScrollDialog className={style.moreDetailsButton} tripListData={item}/>
+        </Paper>
+      ))}
+    </>
+  );
+}
 
-export default SegmentExampleRaised

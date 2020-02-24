@@ -1,3 +1,18 @@
-.segmentExampleRaised {
-    background-color: red;
+.paper {
+    height: 22vh;
+    width: 80%;
+    margin: 20px auto;
 }
+
+.cityNameContainer {
+    font-size: 2rem;
+    padding: 16px ;
+}
+
+.shortDescriptionContainer {
+    font-size: 1rem;
+    padding: 0 0 25px 0;
+    text-decoration: underline;
+}
+
+
