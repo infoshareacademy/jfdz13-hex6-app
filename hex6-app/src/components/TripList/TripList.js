@@ -1,28 +1,29 @@
 import React from 'react';
-import style from './TripList.module.css';
 import tripListData from './TripListData.js'
 
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
+import ScrollDialog from './Button';
+import Description from './Description'
 
-import ScrollDialog from './MoreDetailsButton';
-import ShortDescription from './ShortDescription'
+import { StylesProvider } from '@material-ui/core/styles';
+import style from './TripList.module.css';
 
 export default function CenteredGrid() {
   return (
-    <>  
+    <StylesProvider injectFirst>  
       {tripListData.map(item => (
-        <Paper elevation={3} className={style.paper} key={item.id}>
+        <Paper className={style.paper} elevation={3}  key={item.id}>
           <Container maxWidth="sm" className={style.cityNameContainer}> 
             <div>{item.city} </div>
           </Container>
           <Container maxWidth="sm" className={style.descriptionContainer}> 
-            <ShortDescription tripListData={item}/>
+            <Description tripListData={item}/>
           </Container>
-          <ScrollDialog className={style.moreDetailsButton} tripListData={item}/>
+          <ScrollDialog tripListData={item}/>
         </Paper>
       ))}
-    </>
+    </StylesProvider>
   );
 }
 
