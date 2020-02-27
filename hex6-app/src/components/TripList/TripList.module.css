@@ -1,3 +1,26 @@
-.segmentExampleRaised {
-    background-color: red;
+.paper {
+    background-color: #85dbf2;
+    height: 22vh;
+    width: 80%;
+    margin: 20px auto;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #191919;
+}
+
+.cityNameContainer {
+    font-size: 2.3rem;
+    font-family: 'Asap Condensed', sans-serif;
+    letter-spacing: .8rem;
+    padding: 16px;
+}
+
+.DescriptionContainer {
+    font-size: 1.2rem;
+    padding: 0 0 16px 0;
+}
+
+.MoreDetails {
+    height: 80vh;
+    font-size: 1.2rem;
+    background-color: #f6f6f6;;
 }
