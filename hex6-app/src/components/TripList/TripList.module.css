@@ -1,26 +1,95 @@
+/* --color-primary: #fefefe;
+  --color-yellow: #fed701;
+  --color-darkblue: #02c9da;
+  --color-lightblue: #85dbf2;
+  --color-lightgray: #f6f6f6;
+  --color-darkgray: #626262;
+  --color-dark: #191919;
+
+  --font-body: 'Source Sans Pro', sans-serif;
+  --font-header: 'Asap Condensed', sans-serif; */
+
 .paper {
-    background-color: #85dbf2;
-    height: 22vh;
-    width: 80%;
-    margin: 20px auto;
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #191919;
+    width: 85%;
+    margin: 30px auto;
+    background-color: #f6f6f6
 }
 
-.cityNameContainer {
-    font-size: 2.3rem;
+.img {
+    width: 400px;
+    margin: 5px 0 5px 5px;
+}
+
+.title {
+    text-align: left;
+    font-size: 2rem;
     font-family: 'Asap Condensed', sans-serif;
-    letter-spacing: .8rem;
-    padding: 16px;
+    margin: 10px 0 10px 20px;
 }
 
-.DescriptionContainer {
-    font-size: 1.2rem;
-    padding: 0 0 16px 0;
+.description {
+    display: flex;
+    justify-content: space-between;
+    color: #626262;
+    text-align: left;
+    font-size: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 80%;
+    margin: 15px 0 0 20px;
 }
 
-.MoreDetails {
-    height: 80vh;
+.descriptionElement {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.icon {
     font-size: 1.2rem;
-    background-color: #f6f6f6;;
+    padding-right: 5px;
+}
+
+.button {
+    height: 55%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.price {
+    margin: 18px 10px 0 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+}
+
+.moreDetailsText {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.aaa {
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 80%;
+}
+
+.sliderContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slideName {
+    width: 20%;
+}
+
+.slideBar {
+    width: 40%;
 }
