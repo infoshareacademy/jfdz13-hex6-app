@@ -15,24 +15,24 @@ export default function ComplexGrid({tripListData}) {
     <StylesProvider injectFirst> 
     <Paper className={styles.tripListGridContainer_paper}>
         <Grid container>
-        <Grid>
+        <Grid item>
             <Photo  tripListData={tripListData} />
         </Grid>
-        <Grid sm container >
-            <Grid xs>
-            <Grid>
+        <Grid item sm container >
+            <Grid item xs>
+            <Grid item>
                 <div className={styles.tripListGridContainer_title} >
                 {tripListData.name}
                 </div>
             </Grid>
-            <Grid>               
+            <Grid item>               
                 <Description tripListData={tripListData} />
             </Grid>
-            <Grid className={styles.tripListGridContainer_button}>
+            <Grid item className={styles.tripListGridContainer_button}>
                 <MoreDetailsWindow tripListData={tripListData}/>
             </Grid>
             </Grid>
-            <Grid className={styles.tripListGridContainer_price}>
+            <Grid item className={styles.tripListGridContainer_price}>
                 <div >{tripListData.price} PLN</div>
             </Grid>
         </Grid>
