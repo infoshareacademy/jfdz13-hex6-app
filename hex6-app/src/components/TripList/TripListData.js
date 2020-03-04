@@ -8,7 +8,7 @@ const tripListData = [
         tripLength: 'weekend',
         price: 1000,
         raiting: 5,
-        description: 'It’s simple to visit Gdynia in weekend. Start in Gdynia, tour one or two museums, and walk along the Gdynia cliffs. See Gdynia’s iconic sight on Kamienna Góra, head onto one of Gdynia’s famous boat restaurants and after it stroll along Gdynia’s seafront promenade. This romantic trip is dedicated for couples who like slow sightseeing and visit famouse food places.',
+        description: 'It’s a simple affair to visit Gdynia on the weekend. Start in Gdynia, tour a museum or two, and walk along the Gdynia cliffs. Experience Gdynia’s iconic sights on Kamienna Góra, head onto one of Gdynia’s famous boat restaurants and stroll along Gdynia’s seafront promenade. This romantic trip is tailor-made for couples who enjoy sightseeing at a leisurely pace and sampling food at famous restaurants.',
         slider: {
             sport: 0,
             monuments: 3,
@@ -26,7 +26,7 @@ const tripListData = [
         tripLength: 'week',
         price: 5000,
         raiting: 4,
-        description: 'The historic centre of the city is a beautiful place to start your exploration and spend some time exploring the waterfront along the Motlawa River. Visit Museum of the Second World War,  European Solidarity Center. Spend an afternoon at the seaside. Spend some time with kids in Loopy’s World Family Recreation Centre, take ropes course or go to Experiment Center.',
+        description: 'The historic city centre is a beautiful spot to begin your exploration. Spending some time strolling along the Motlawa River waterfront. Visit the Museum of the Second World War and the European Solidarity Center. Enjoy a relaxing afternoon at the seaside. Spend some quality time with the kids at the Loopy’s World Family Recreation Centre, take a rope climbing course or go to the Experiment Center.',
         slider: {
             sport: 3,
             monuments: 2,
@@ -44,7 +44,7 @@ const tripListData = [
         tripLength: 'weekend',
         price: 800,
         raiting: 3,
-        description: 'So you want to explore by bike? See city center, Sopot pier, beach and much more using only the strength of your leg.',
+        description: 'So, you want to explore the city by bike? See the city centre, the Sopot pier, the beach and much, much more using only your leg power!',
         slider: {
             sport: 5,
             monuments: 4,

@@ -15,21 +15,21 @@ import styles from './TripList.module.css'
 export default function Description ({tripListData})  {
 
   return (
-        <div className={styles.description}>
-          <div className={styles.descriptionElement}>
-          {tripListData.numberOfPeople === "single" ? <PersonIcon className={styles.icon}/> : null }
-          {tripListData.numberOfPeople === "couple" ? <PeopleIcon className={styles.icon}/> : null }
-          {tripListData.numberOfPeople === "family with kids" ? <ChildFriendlyIcon className={styles.icon}/> : null }
+        <div className={styles.description_mainContainer}>
+          <div className={styles.description_singleElement}>
+          {tripListData.numberOfPeople === "single" ? <PersonIcon className={styles.description_icon}/> : null }
+          {tripListData.numberOfPeople === "couple" ? <PeopleIcon className={styles.description_icon}/> : null }
+          {tripListData.numberOfPeople === "family with kids" ? <ChildFriendlyIcon className={styles.description_icon}/> : null }
           For {tripListData.numberOfPeople}
           </div> 
-          <div className={styles.descriptionElement}>       
-          {tripListData.tripLength === "weekend" ? <TodayIcon className={styles.icon}/>: null }
-          {tripListData.tripLength === "week" ? <><TodayIcon className={styles.icon}/><EventIcon className={styles.icon}/></> : null }
+          <div className={styles.description_singleElement}>       
+          {tripListData.tripLength === "weekend" ? <TodayIcon className={styles.description_icon}/>: null }
+          {tripListData.tripLength === "week" ? <><TodayIcon className={styles.description_icon}/><EventIcon className={styles.description_icon}/></> : null }
           During {tripListData.tripLength}
           </div>
-          <div className={styles.descriptionElement}>
-          {tripListData.seasonTime === "summer" ? <WbSunnyIcon className={styles.icon}/> : null }
-          {tripListData.seasonTime === "winter" ? <AcUnitIcon className={styles.icon}/> : null }
+          <div className={styles.description_singleElement}>
+          {tripListData.seasonTime === "summer" ? <WbSunnyIcon className={styles.description_icon}/> : null }
+          {tripListData.seasonTime === "winter" ? <AcUnitIcon className={styles.description_icon}/> : null }
           In the {tripListData.seasonTime}
           </div>
         </div>

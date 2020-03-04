@@ -3,8 +3,6 @@ import React from 'react';
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 
-import styles from './TripList.module.css'
-
 export default function Raiting ({tripListData}){
     return (
         <>

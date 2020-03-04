@@ -3,7 +3,6 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import Raiting from './Raiting'
 import Description from './Description'
 import SiteSlider from './Slider'
@@ -26,24 +25,27 @@ export default function MoreDetailsWindow ({tripListData}) {
 
   return (
     <StylesProvider injectFirst> 
-      <Button className={styles.moreDetailsText} onClick={handleClickOpen('paper')} >MORE DETAILS</Button>
+      <Button className={styles.moreDetailsWindow_buttonText} onClick={handleClickOpen('paper')} >MORE DETAILS</Button>
 
       <Dialog  open={open} onClose={handleClose} scroll={scroll}>
-        <DialogTitle>{tripListData.name} <Raiting tripListData={tripListData}/> </DialogTitle>
+        <h2 className={styles.moreDetailsWindow_title}>
+            <div>{tripListData.name}</div>
+            <div className={styles.moreDetailsWindow_raitingDiv}><Raiting tripListData={tripListData}/></div>
+        </h2>
         <DialogContent dividers={scroll === 'paper'}>
             <Description tripListData={tripListData}/>
         </DialogContent>
-        <DialogContent dividers={scroll === 'paper'}>
+        <DialogContent dividers={scroll === 'paper'} className={styles.moreDetailsWindow_mainDescription} >
             {tripListData.description}
         </DialogContent>
         <DialogContent dividers={scroll === 'paper'}>
             <SiteSlider tripListData={tripListData}/>
         </DialogContent>
-        <DialogContent dividers={scroll === 'paper'}>
-            {tripListData.price}
+        <DialogContent dividers={scroll === 'paper'} className={styles.moreDetailsWindow_price}>
+           Price: {tripListData.price} PLN
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>
+          <Button onClick={handleClose} className={styles.moreDetailsWindow_cancelButton}>
             Cancel
           </Button>
         </DialogActions>

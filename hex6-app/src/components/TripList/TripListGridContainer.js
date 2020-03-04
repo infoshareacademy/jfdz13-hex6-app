@@ -13,7 +13,7 @@ import styles from './TripList.module.css'
 export default function ComplexGrid({tripListData}) {
   return (
     <StylesProvider injectFirst> 
-    <Paper className={styles.paper}>
+    <Paper className={styles.tripListGridContainer_paper}>
         <Grid container>
         <Grid>
             <Photo  tripListData={tripListData} />
@@ -21,18 +21,18 @@ export default function ComplexGrid({tripListData}) {
         <Grid sm container >
             <Grid xs>
             <Grid>
-                <div className={styles.title} >
+                <div className={styles.tripListGridContainer_title} >
                 {tripListData.name}
                 </div>
             </Grid>
             <Grid>               
                 <Description tripListData={tripListData} />
             </Grid>
-            <Grid className={styles.button}>
+            <Grid className={styles.tripListGridContainer_button}>
                 <MoreDetailsWindow tripListData={tripListData}/>
             </Grid>
             </Grid>
-            <Grid className={styles.price}>
+            <Grid className={styles.tripListGridContainer_price}>
                 <div >{tripListData.price} PLN</div>
             </Grid>
         </Grid>
