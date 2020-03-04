@@ -11,6 +11,7 @@
 
 .tripListGridContainer_paper{
     width: 85%;
+    height: auto;
     margin: 30px auto;
     background-color: #f6f6f6
 }
@@ -114,6 +115,59 @@
     margin-right: 7px;
 }
 
-@media (max-width: 768px) {
-    
+@media screen and (max-width: 1110px) {
+    .photo_img {
+        width: 300px;
+    }
+
+    .tripListGridContainer_button {
+        align-items: center;
+        margin-top: 12px;
+    }
+}
+
+@media screen and (max-width: 1036px) {
+    .photo_img {
+        display: none;
+    }
+
+    .tripListGridContainer_button {
+        justify-content: flex-start;
+        align-items: flex-end;
+        margin-left: 12px;
+    }
+}
+
+@media screen and (max-width: 668px) {
+    .tripListGridContainer_title {
+        font-size: 1.8rem;
+    }
+
+    .tripListGridContainer_button {
+        align-items: flex-start;
+    }
+
+    .description_mainContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .description_singleElement {
+        margin: 3px;
+    }
+
+    .tripListGridContainer_price {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .tripListGridContainer_title {
+        font-size: 1.7rem;
+        margin-top: 12px;
+    }
+
+    .tripListGridContainer_price {
+        font-size: 1rem;
+    }
 }
