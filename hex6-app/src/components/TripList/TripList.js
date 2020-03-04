@@ -1,5 +1,5 @@
 import React from 'react';
-import tripListData from '../../../public/TripListData.js/index.js'
+import tripListData from './TripListData.js'
 
 import ComplexGrid from "./TripListGridContainer"
 
