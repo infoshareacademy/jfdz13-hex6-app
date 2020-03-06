@@ -133,8 +133,7 @@
 
     .tripListGridContainer_button {
         justify-content: flex-start;
-        align-items: flex-end;
-        margin-left: 12px;
+        margin: 0 0 20px 12px;
     }
 }
 
@@ -158,6 +157,11 @@
 
     .tripListGridContainer_price {
         font-size: 1.1rem;
+    }
+
+    .tripListGridContainer_button {
+        margin-bottom: 0;
+        margin-top: 10px;
     }
 }
 
