@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './App.css';
-import SegmentExampleRaised from "./components/TripList/TripList.js"
 
 import { BrowserRouter, NavLink, Switch, Route} from "react-router-dom";
 
@@ -15,7 +14,7 @@ function App() {
         <BrowserRouter>
           <nav>
             <ul>
-              <li><NavLink exact to="/"><span role="img">🏠</span> Home</NavLink></li>
+              <li><NavLink exact to="/"> Home</NavLink></li>
               <li><NavLink to="/components/TripList/TripList">Trip List</NavLink></li>
             </ul>
           </nav>

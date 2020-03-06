@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Container from '@material-ui/core/Container';
-
 import PersonIcon from '@material-ui/icons/Person';
 import PeopleIcon from '@material-ui/icons/People';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
