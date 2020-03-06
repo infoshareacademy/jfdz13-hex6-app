@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Weekend trip to Gdynia",
+        "city": "Gdynia",
+        "numberOfPeople": "couple",
+        "seasonTime": "summer",
+        "tripLength": "weekend",
+        "price": 1000,
+        "raiting": 5,
+        "description": "It’s a simple affair to visit Gdynia on the weekend. Start in Gdynia, tour a museum or two, and walk along the Gdynia cliffs. Experience Gdynia’s iconic sights on Kamienna Góra, head onto one of Gdynia’s famous boat restaurants and stroll along Gdynia’s seafront promenade. This romantic trip is tailor-made for couples who enjoy sightseeing at a leisurely pace and sampling food at famous restaurants.",
+        "slider": {
+            "sport": 0,
+            "monuments": 3,
+            "party": 3,
+            "hotels": 5,
+            "restaurants": 5
+        }
+    }
+]

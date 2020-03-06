@@ -13,8 +13,9 @@ class CenteredGrid extends Component {
   }
 
 componentDidMount () {
-  fetch('../../public/TripListData')
+  fetch('http://localhost:3000/public/tripListData.json')
     .then(results => results.json())
+    .then(results => console.log(results))
     .then (data => {
       let tripList = data.results.map(item => {
         return (
