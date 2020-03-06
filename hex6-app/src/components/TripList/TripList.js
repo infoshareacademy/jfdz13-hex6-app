@@ -13,17 +13,10 @@ class CenteredGrid extends Component {
   }
 
 componentDidMount () {
-  fetch('http://localhost:3000/public/tripListData.json')
+  fetch('/tripListData.json')
+    .then(results => results)
     .then(results => results.json())
-    .then(results => console.log(results))
-    .then (data => {
-      let tripList = data.results.map(item => {
-        return (
-        <ComplexGrid tripListData={item} key={item.id}/>
-        )
-      })
-      this.setStatus({tripList: tripList})
-    })
+    .then(tripList => this.setState({tripList}))
 }
 
 render () {
@@ -38,13 +31,3 @@ render () {
 } }
 
 export default CenteredGrid;
-
-// export default function CenteredGrid() {
-//   return (
-//     <>
-//     {tripListData.map(item => (
-//       <ComplexGrid tripListData={item} key={item.id}/>
-//     ))}
-//     </>
-//   );
-// }

@@ -16,5 +16,41 @@
             "hotels": 5,
             "restaurants": 5
         }
+    },
+    {
+        "id": 2,
+        "name": "Family trip to Gdańsk",
+        "city": "Gdańsk",
+        "numberOfPeople": "family with kids",
+        "seasonTime": "summer",
+        "tripLength": "week",
+        "price": 5000,
+        "raiting": 4,
+        "description": "The historic city centre is a beautiful spot to begin your exploration. Spending some time strolling along the Motlawa River waterfront. Visit the Museum of the Second World War and the European Solidarity Center. Enjoy a relaxing afternoon at the seaside. Spend some quality time with the kids at the Loopy’s World Family Recreation Centre, take a rope climbing course or go to the Experiment Center.",
+        "slider": {
+            "sport": 3,
+            "monuments": 2,
+            "party": 0,
+            "hotels": 4,
+            "restaurants": 4
+        }
+    },
+    {
+        "id": 3,
+        "name": "Weekend bike trip to Sopot",
+        "city": "Sopot",
+        "numberOfPeople": "single",
+        "seasonTime": "summer",
+        "tripLength": "weekend",
+        "price": 800,
+        "raiting": 3,
+        "description": "So, you want to explore the city by bike? See the city centre, the Sopot pier, the beach and much, much more using only your leg power!",
+        "slider": {
+            "sport": 5,
+            "monuments": 4,
+            "party": 2,
+            "hotels": 3,
+            "restaurants": 4
+        }
     }
 ]
