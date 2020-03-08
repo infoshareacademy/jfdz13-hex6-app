@@ -7,7 +7,7 @@
         "seasonTime": "summer",
         "tripLength": "weekend",
         "price": 1000,
-        "raiting": 5,
+        "rating": 5,
         "description": "It’s a simple affair to visit Gdynia on the weekend. Start in Gdynia, tour a museum or two, and walk along the Gdynia cliffs. Experience Gdynia’s iconic sights on Kamienna Góra, head onto one of Gdynia’s famous boat restaurants and stroll along Gdynia’s seafront promenade. This romantic trip is tailor-made for couples who enjoy sightseeing at a leisurely pace and sampling food at famous restaurants.",
         "slider": {
             "sport": 0,
@@ -43,7 +43,7 @@
         "seasonTime": "summer",
         "tripLength": "weekend",
         "price": 800,
-        "raiting": 3,
+        "rating": 3,
         "description": "So, you want to explore the city by bike? See the city centre, the Sopot pier, the beach and much, much more using only your leg power!",
         "slider": {
             "sport": 5,
