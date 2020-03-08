@@ -1,10 +1,33 @@
-import React from 'react';
-import style from './TripList.module.css';
+import React, { Component } from 'react';
+// import tripListData from './TripListData.js'
 
-import { Segment } from 'semantic-ui-react'
 
-const SegmentExampleRaised = () => (
-  <Segment className={style.segmentExampleRaised} raised>Pellentesque habitant morbi tristique senectus.</Segment>
-)
+import ComplexGrid from "./TripListGridContainer"
 
-export default SegmentExampleRaised
+class CenteredGrid extends Component {
+  constructor () {
+    super ();
+    this.state = {
+      tripList: [],
+    };
+  }
+
+componentDidMount () {
+  fetch('/tripListData.json')
+    .then(results => results)
+    .then(results => results.json())
+    .then(tripList => this.setState({tripList}))
+}
+
+render () {
+  const { tripList } = this.state;
+  return (
+    <>
+      {tripList.map(item => (
+        <ComplexGrid tripListData={item} key={item.id}/>
+      ))}
+    </>
+  )
+} }
+
+export default CenteredGrid;
