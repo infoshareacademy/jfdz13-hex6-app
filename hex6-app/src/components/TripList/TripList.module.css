@@ -1,26 +1,177 @@
-.paper {
-    background-color: #85dbf2;
-    height: 22vh;
-    width: 80%;
-    margin: 20px auto;
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #191919;
+/* --color-primary: #fefefe;
+  --color-yellow: #fed701;
+  --color-darkblue: #02c9da;
+  --color-lightblue: #85dbf2;
+  --color-lightgray: #f6f6f6;
+  --color-darkgray: #626262;
+  --color-dark: #191919;
+
+  --font-body: 'Source Sans Pro', sans-serif;
+  --font-header: 'Asap Condensed', sans-serif; */
+
+.tripListGridContainer_paper{
+    width: 85%;
+    height: auto;
+    margin: 30px auto;
+    background-color: #f6f6f6
 }
 
-.cityNameContainer {
-    font-size: 2.3rem;
+.tripListGridContainer_title {
+    text-align: left;
+    font-size: 2rem;
     font-family: 'Asap Condensed', sans-serif;
-    letter-spacing: .8rem;
-    padding: 16px;
+    margin: 10px 0 20px 20px;
 }
 
-.DescriptionContainer {
-    font-size: 1.2rem;
-    padding: 0 0 16px 0;
+.tripListGridContainer_button {
+    height: 55%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    cursor: pointer;
 }
 
-.MoreDetails {
-    height: 80vh;
+.tripListGridContainer_price {
+    margin: 18px 10px 0 0;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.2rem;
-    background-color: #f6f6f6;;
+}
+
+.photo_img {
+    width: 400px;
+    margin: 5px 0 5px 5px;
+}
+
+.description_mainContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #626262;
+    text-align: left;
+    font-size: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 80%;
+    margin: 0 0 0 20px;
+}
+
+.description_singleElement {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.description_icon {
+    font-size: 1.2rem;
+    padding-right: 5px;
+}
+
+.slider_sliderContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider_singleSlider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider_sliderName{
+    width: 20%;
+}
+
+.slider_sliderBar {
+    width: 40%;
+}
+
+.moreDetailsWindow_buttonText {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.moreDetailsWindow_title {
+    width: 90%;
+    margin: 20px 0 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.moreDetailsWindow_ratingDiv {
+    margin-right: -25px;
+}
+
+.moreDetailsWindow_mainDescription {
+    text-align: justify;
+}
+
+.moreDetailsWindow_price {
+    text-align: right;
+}
+
+.moreDetailsWindow_cancelButton {
+    margin-right: 7px;
+}
+
+@media screen and (max-width: 1110px) {
+    .photo_img {
+        width: 300px;
+    }
+
+    .tripListGridContainer_button {
+        align-items: center;
+        margin-top: 12px;
+    }
+}
+
+@media screen and (max-width: 1036px) {
+    .photo_img {
+        display: none;
+    }
+
+    .tripListGridContainer_button {
+        justify-content: flex-start;
+        margin: 0 0 20px 12px;
+    }
+}
+
+@media screen and (max-width: 668px) {
+    .tripListGridContainer_title {
+        font-size: 1.8rem;
+    }
+
+    .tripListGridContainer_button {
+        align-items: flex-start;
+    }
+
+    .description_mainContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .description_singleElement {
+        margin: 3px;
+    }
+
+    .tripListGridContainer_price {
+        font-size: 1.1rem;
+    }
+
+    .tripListGridContainer_button {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .tripListGridContainer_title {
+        font-size: 1.7rem;
+        margin-top: 12px;
+    }
+
+    .tripListGridContainer_price {
+        font-size: 1rem;
+    }
 }
