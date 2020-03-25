@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, NavLink, Switch, Route} from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation"
-import CenteredGrid from "./components/TripList/TripList"
+import TripList from "./components/TripList/TripList"
+import FavouriteTripList from './components/FavouriteTripListPage/FavouriteTrips'
 
 function App() {
   return (
@@ -15,13 +16,15 @@ function App() {
               <li><NavLink exact to="/"><span aria-label="home" role="img">🏠</span> Home</NavLink></li>
               <li><NavLink to="/components/Navigation/Navigation">Navigation</NavLink></li>
               <li><NavLink to="/components/TripList/TripList">Trip List</NavLink></li>
+              <li><NavLink to="/components/FavouriteTripListPage/FavouriteTrips">Favourite Trips List</NavLink></li>
             </ul>
           </nav>
         
         <div className="container">
           <Switch>
             <Route path="/components/Navigation" component={Navigation} />
-            <Route path="/components/TripList" component={CenteredGrid} />
+            <Route path="/components/TripList" component={TripList} />
+            <Route path="/components/FavouriteTripListPage/FavouriteTrips" component={FavouriteTripList} />
           </Switch>
         </div>
         </BrowserRouter>

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 // import tripListData from './TripListData.js'
 
 
-import ComplexGrid from "./TripListGridContainer"
+import TripListGridContainer from "./TripListGridContainer"
 
-class CenteredGrid extends Component {
+class TripList extends Component {
   constructor () {
     super ();
     this.state = {
@@ -21,13 +21,14 @@ componentDidMount () {
 
 render () {
   const { tripList } = this.state;
-  return (
-    <>
-      {tripList.map(item => (
-        <ComplexGrid tripListData={item} key={item.id}/>
-      ))}
-    </>
-  )
-} }
+    return (
+      <>
+        {tripList.map(item => (
+          <TripListGridContainer tripListData={item} key={item.id}/>
+        ))}
+      </>
+    )
+  } 
+}
 
-export default CenteredGrid;
+export default TripList;
