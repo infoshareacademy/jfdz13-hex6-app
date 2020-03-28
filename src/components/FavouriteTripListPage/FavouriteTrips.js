@@ -1,11 +1,13 @@
-import React from "react"; 
-import ComplexGrid from '../TripList/TripListGridContainer'
+import React from "react";
+import ComplexGrid from '../TripList/TripListItem'
 
-const FavouriteTripList = ({favouriteTripList}) => {
+const FavouriteTripList = props => {
+
+    console.log('favouriteTripList: ', props.favouriteTripList);
   return (
         <>
-          {favouriteTripList.map(item => (
-            <ComplexGrid favouriteTripList={item} key={item.id}/>
+          {props.favouriteTripList.map(item => (
+            <ComplexGrid tripListData={item} key={item.id}  handleAddToFavourites={props.handleAddToFavourites} />
           ))}
         </>
   )
