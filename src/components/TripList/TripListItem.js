@@ -13,30 +13,38 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import styles from './TripList.module.css'
 
-class TripListGridContainer extends React.Component {
+class TripListItem extends React.Component {
     
     constructor(props) {
         super(props);
     
         this.state = {
-            favouriteTripList: [],
+           buttonClicked: false,
         }
       }
 
-    addToFavouriteTripList = () => {
-        const newTrip = this.props.tripListData;
+    // addToFavouriteTripList = () => {
+    //     const newTrip = this.props.tripListData;
 
-        this.setState ({
-            favouriteTripList: [...this.state.favouriteTripList, newTrip]
+    //     this.setState ({
+    //         favouriteTripList: [...this.state.favouriteTripList, newTrip]
+    //     })
+    //     console.log(this.state.favouriteTripList)
+    //     // console.log(newTrip)
+    // }
+
+    addToFavourite = () => {
+        this.setState  ({
+            buttonClicked: !this.state.buttonClicked
         })
-        console.log(this.state.favouriteTripList)
-        // console.log(newTrip)
     }
+
+
     
     render() {
         return (
             <StylesProvider injectFirst> 
-            <Paper className={styles.tripListGridContainer_paper}>
+            <Paper className={styles.tripListItem_paper}>
                 <Grid container>
                 <Grid item>
                     <Photo  tripListData={this.props.tripListData} />
@@ -44,19 +52,22 @@ class TripListGridContainer extends React.Component {
                 <Grid item sm container >
                     <Grid item xs>
                     <Grid item>
-                            <div className={styles.tripListGridContainer_title} >
+                            <div className={styles.tripListItem_title} >
                             {this.props.tripListData.name}
                             </div>
                     </Grid>
                     <Grid item>               
                         <Description tripListData={this.props.tripListData} />
                     </Grid>
-                    <Grid item className={styles.tripListGridContainer_button}>
+                    <Grid item className={styles.tripListItem_buttonContainer}>
                         <MoreDetailsWindow tripListData={this.props.tripListData} />
-                        <ActionButton content={<FavoriteIcon/>} onClicked={() => this.addToFavouriteTripList()} />
+                        
+                        {(this.state.buttonClicked === false) && <ActionButton className={styles.tripListItem_addFavouriteTrip} content={<FavoriteIcon/>}  onClicked={this.addToFavourite}/>}
+                        {(this.state.buttonClicked === true) && <ActionButton className={styles.tripListItem_addFavouriteTrip_red} content={<FavoriteIcon/>}  onClicked={this.addToFavourite}/>}
+
                     </Grid>
                     </Grid>
-                    <Grid item className={styles.tripListGridContainer_price}>
+                    <Grid item className={styles.tripListItem_price}>
                         <div >{this.props.tripListData.price} PLN</div>
                     </Grid>
                 </Grid>
@@ -67,4 +78,4 @@ class TripListGridContainer extends React.Component {
     }
 }
 
-export default TripListGridContainer;
+export default TripListItem;

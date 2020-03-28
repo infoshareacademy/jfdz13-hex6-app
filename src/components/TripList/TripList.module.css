@@ -9,21 +9,21 @@
   --font-body: 'Source Sans Pro', sans-serif;
   --font-header: 'Asap Condensed', sans-serif; */
 
-.tripListGridContainer_paper{
+.tripListItem_paper{
     width: 85%;
     height: auto;
     margin: 30px auto;
     background-color: #f6f6f6
 }
 
-.tripListGridContainer_title {
+.tripListItem_title {
     text-align: left;
     font-size: 2rem;
     font-family: 'Asap Condensed', sans-serif;
     margin: 10px 0 20px 20px;
 }
 
-.tripListGridContainer_button {
+.tripListItem_buttonContainer {
     height: 55%;
     display: flex;
     align-items: flex-end;
@@ -31,7 +31,16 @@
     cursor: pointer;
 }
 
-.tripListGridContainer_price {
+.tripListItem_addFavouriteTrip {
+    border: none;
+}
+
+.tripListItem_addFavouriteTrip_red {
+    border: none;
+    color: red;
+}
+
+.tripListItem_price {
     margin: 18px 10px 0 0;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.2rem;

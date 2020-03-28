@@ -16,7 +16,7 @@ function App() {
               <li><NavLink exact to="/"><span aria-label="home" role="img">🏠</span> Home</NavLink></li>
               <li><NavLink to="/components/Navigation/Navigation">Navigation</NavLink></li>
               <li><NavLink to="/components/TripList/TripList">Trip List</NavLink></li>
-              <li><NavLink to="/components/FavouriteTripListPage/FavouriteTrips">Favourite Trips List</NavLink></li>
+              {/* <li><NavLink to="/components/FavouriteTripListPage/FavouriteTrips">Favourite Trips List</NavLink></li> */}
             </ul>
           </nav>
         
@@ -24,7 +24,7 @@ function App() {
           <Switch>
             <Route path="/components/Navigation" component={Navigation} />
             <Route path="/components/TripList" component={TripList} />
-            <Route path="/components/FavouriteTripListPage/FavouriteTrips" component={FavouriteTripList} />
+            {/* <Route path="/components/FavouriteTripListPage/FavouriteTrips" component={FavouriteTripList} /> */}
           </Switch>
         </div>
         </BrowserRouter>

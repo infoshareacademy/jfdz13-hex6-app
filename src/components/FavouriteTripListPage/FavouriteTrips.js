@@ -1,16 +1,16 @@
-import React from "react"; 
-import ComplexGrid from '../TripList/TripListGridContainer'
+// import React from "react"; 
+// import ComplexGrid from '../TripList/TripListGridContainer'
 
-const FavouriteTripList = ({favouriteTripList}) => {
-  return (
-        <>
-          {favouriteTripList.map(item => (
-            <ComplexGrid favouriteTripList={item} key={item.id}/>
-          ))}
-        </>
-  )
-};
+// const FavouriteTripList = ({favouriteTripList}) => {
+//   return (
+//         <>
+//           {favouriteTripList.map(item => (
+//             <ComplexGrid favouriteTripList={item} key={item.id}/>
+//           ))}
+//         </>
+//   )
+// };
 
-export default FavouriteTripList;
+// export default FavouriteTripList;
 
 

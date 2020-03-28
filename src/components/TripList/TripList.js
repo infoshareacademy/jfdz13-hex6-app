@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import tripListData from './TripListData.js'
 
 
-import TripListGridContainer from "./TripListGridContainer"
+import TripListItem from "./TripListItem"
 
 class TripList extends Component {
   constructor () {
@@ -24,7 +24,7 @@ render () {
     return (
       <>
         {tripList.map(item => (
-          <TripListGridContainer tripListData={item} key={item.id}/>
+          <TripListItem tripListData={item} key={item.id}/>
         ))}
       </>
     )
