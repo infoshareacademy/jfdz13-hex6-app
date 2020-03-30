@@ -9,7 +9,10 @@ import BeachAccessRoundedIcon from '@material-ui/icons/BeachAccessRounded';
 import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 
-// import {NavLink} from "react-router-dom";
+import IconButton from '@material-ui/core/IconButton';
+import MoreIcon from '@material-ui/icons/MoreVert';
+
+import {Link} from "react-router-dom";
 // import styles from './Navigation.module.css';
 
 // import Avatar from '@material-ui/core/Avatar';
@@ -24,7 +27,7 @@ const useStyles = makeStyles(() => ({
 
 export default function BottomAppBar() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState('recents');
 
   return (
       <AppBar position="fixed" color="primary" className={classes.appBar}>
@@ -34,20 +37,14 @@ export default function BottomAppBar() {
         setValue(newValue);
       }}
       showLabels
-      className={classes.root}
     >
-      <BottomNavigationAction label="Home" icon={<HomeRoundedIcon />} />
-      <BottomNavigationAction label="Trip plan" icon={<BeachAccessRoundedIcon />} />
+      <BottomNavigationAction component={Link} to="/" value="home" label="Home" icon={<HomeRoundedIcon />} />
+      <BottomNavigationAction component={Link} to="/components/TripList/TripList" value="trip plan" label="Trip plan" icon={<BeachAccessRoundedIcon />} />
       <BottomNavigationAction label="Favourites" icon={<FavoriteRoundedIcon />} />
-      <BottomNavigationAction label="My panel" icon={<AccountCircleRoundedIcon />} />
-      {/* <li><NavLink exact to="/" className={styles.BottomNavigationList} > <BottomNavigationAction label="Home" icon={<HomeRoundedIcon />} /></NavLink></li> */}
+      {/* <BottomNavigationAction label="My panel" icon={<AccountCircleRoundedIcon />} /> */}
+      <BottomNavigationAction edge="end" color="inherit" icon={<MoreIcon />} />
         </BottomNavigation>
       </AppBar>
   );
 }
 
-
-{/* <ul className={styles.menuList}>
-<li><NavLink exact to="/"><span aria-label="home" role="img">🏠</span> Home</NavLink></li>
-<li><NavLink to="/components/TripList/TripList">Trip List</NavLink></li>
-</ul> */}

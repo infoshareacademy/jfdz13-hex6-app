@@ -11,10 +11,14 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 
-import {NavLink} from "react-router-dom";
+
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
+import BeachAccessRoundedIcon from '@material-ui/icons/BeachAccessRounded';
+import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded';
+import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
+
+import {Link} from "react-router-dom";
 import styles from './Navigation.module.css';
 
 import Logo from './Logo.js';
@@ -53,6 +57,7 @@ export default function ButtonAppBar(props) {
     left: false,
   });
 
+  const [value, setValue] = React.useState(0);
   const toggleDrawer = (side, open) => event => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
@@ -68,22 +73,40 @@ export default function ButtonAppBar(props) {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+      <List component="nav" aria-label="main mailbox folders"
+      value={value}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+      }}
+      showLabels>
+      <div className={styles.logoContainer}><Logo/></div> 
+      <Divider />
+        <ListItem component={Link} to="/" value="home" button>
+          <ListItemIcon>
+            <HomeRoundedIcon />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
+        <ListItem component={Link} to="/components/TripList/TripList" value="trip plan" button>
+          <ListItemIcon>
+            <BeachAccessRoundedIcon />
+          </ListItemIcon>
+          <ListItemText primary="Trip plan" />
+        </ListItem>
+        <ListItem component={Link} to="/" value="home" button>
+          <ListItemIcon>
+            <FavoriteRoundedIcon />
+          </ListItemIcon>
+          <ListItemText primary="Favourites" />
+        </ListItem>
+        <ListItem component={Link} to="/" value="home" button>
+          <ListItemIcon>
+            <AccountCircleRoundedIcon  />
+          </ListItemIcon>
+          <ListItemText primary="My pannel" />
+        </ListItem>
       </List>
       <Divider />
-      <nav>
-            <ul className={styles.menuList}>
-              <li><NavLink exact to="/"><span aria-label="home" role="img">🏠</span> Home</NavLink></li>
-              <li><NavLink to="/components/TripList/TripList">Trip List</NavLink></li>
-            </ul>
-      </nav>
     </div>
   );
 
