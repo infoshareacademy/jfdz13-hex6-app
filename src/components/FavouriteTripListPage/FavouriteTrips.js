@@ -1,11 +1,11 @@
 // import React from "react"; 
-// import ComplexGrid from '../TripList/TripListGridContainer'
+// import TripList from '../TripList/TripList'
 
 // const FavouriteTripList = ({favouriteTripList}) => {
 //   return (
 //         <>
 //           {favouriteTripList.map(item => (
-//             <ComplexGrid favouriteTripList={item} key={item.id}/>
+//             <TripList favouriteTripList={item} key={item.id}/>
 //           ))}
 //         </>
 //   )

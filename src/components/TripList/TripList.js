@@ -4,20 +4,21 @@ import React, { Component } from 'react';
 
 import TripListItem from "./TripListItem"
 
-class TripList extends Component {
+class TripList extends React.Component {
   constructor () {
     super ();
     this.state = {
       tripList: [],
     };
-  }
+}
 
 componentDidMount () {
   fetch('/tripListData.json')
     .then(results => results)
     .then(results => results.json())
     .then(tripList => this.setState({tripList}))
-}
+};
+
 
 render () {
   const { tripList } = this.state;

@@ -23,37 +23,28 @@ class TripListItem extends React.Component {
         }
       }
 
-    // addToFavouriteTripList = () => {
-    //     const newTrip = this.props.tripListData;
-
-    //     this.setState ({
-    //         favouriteTripList: [...this.state.favouriteTripList, newTrip]
-    //     })
-    //     console.log(this.state.favouriteTripList)
-    //     // console.log(newTrip)
-    // }
-
     addToFavourite = () => {
         this.setState  ({
             buttonClicked: !this.state.buttonClicked
         })
     }
 
-
-    
     render() {
         return (
             <StylesProvider injectFirst> 
             <Paper className={styles.tripListItem_paper}>
-                <Grid container>
+                <Grid container >
                 <Grid item>
                     <Photo  tripListData={this.props.tripListData} />
                 </Grid>
-                <Grid item sm container >
+                <Grid item sm container>
                     <Grid item xs>
                     <Grid item>
                             <div className={styles.tripListItem_title} >
                             {this.props.tripListData.name}
+                            {(this.state.buttonClicked === false) && <ActionButton className={styles.tripListItem_addFavouriteTrip} content={<FavoriteIcon/>}  onClicked={this.addToFavourite}/>}
+                            {(this.state.buttonClicked === true) && <ActionButton className={styles.tripListItem_addFavouriteTrip_red} content={<FavoriteIcon/>}  onClicked={this.addToFavourite}/>}
+
                             </div>
                     </Grid>
                     <Grid item>               
@@ -61,10 +52,6 @@ class TripListItem extends React.Component {
                     </Grid>
                     <Grid item className={styles.tripListItem_buttonContainer}>
                         <MoreDetailsWindow tripListData={this.props.tripListData} />
-                        
-                        {(this.state.buttonClicked === false) && <ActionButton className={styles.tripListItem_addFavouriteTrip} content={<FavoriteIcon/>}  onClicked={this.addToFavourite}/>}
-                        {(this.state.buttonClicked === true) && <ActionButton className={styles.tripListItem_addFavouriteTrip_red} content={<FavoriteIcon/>}  onClicked={this.addToFavourite}/>}
-
                     </Grid>
                     </Grid>
                     <Grid item className={styles.tripListItem_price}>
