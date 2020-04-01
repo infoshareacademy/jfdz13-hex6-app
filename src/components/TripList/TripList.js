@@ -1,33 +1,34 @@
-import React, { Component } from 'react';
-// import tripListData from './TripListData.js'
+import React from 'react';
+import styles from './TripList.module.css'
 
+import TripListItem from "./TripListItem"
 
-import ComplexGrid from "./TripListGridContainer"
-
-class CenteredGrid extends Component {
+class TripList extends React.Component {
   constructor () {
     super ();
     this.state = {
       tripList: [],
     };
-  }
+}
 
 componentDidMount () {
   fetch('/tripListData.json')
     .then(results => results)
     .then(results => results.json())
     .then(tripList => this.setState({tripList}))
-}
+};
+
 
 render () {
   const { tripList } = this.state;
-  return (
-    <>
-      {tripList.map(item => (
-        <ComplexGrid tripListData={item} key={item.id}/>
-      ))}
-    </>
-  )
-} }
+    return (
+      <div className={styles.tripList_container}>
+        {tripList.map(item => (
+          <TripListItem tripListData={item} key={item.id}/>
+        ))}
+      </div>
+    )
+  } 
+}
 
-export default CenteredGrid;
+export default TripList;
