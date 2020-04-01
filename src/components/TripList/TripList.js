@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-// import tripListData from './TripListData.js'
-
+import React from 'react';
+import styles from './TripList.module.css'
 
 import TripListItem from "./TripListItem"
 
@@ -23,11 +22,11 @@ componentDidMount () {
 render () {
   const { tripList } = this.state;
     return (
-      <>
+      <div className={styles.tripList_container}>
         {tripList.map(item => (
           <TripListItem tripListData={item} key={item.id}/>
         ))}
-      </>
+      </div>
     )
   } 
 }

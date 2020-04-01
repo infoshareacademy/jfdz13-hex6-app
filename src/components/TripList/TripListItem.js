@@ -27,6 +27,7 @@ class TripListItem extends React.Component {
         this.setState  ({
             buttonClicked: !this.state.buttonClicked
         })
+        
     }
 
     render() {
