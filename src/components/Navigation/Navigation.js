@@ -25,6 +25,10 @@ import Logo from './Logo.js';
 
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import BottomAppBar from './BottomNavigation';
+import UserWindow from './UserWindow';
+
+import Avatar from '@material-ui/core/Avatar';
+import PromoWindow from './PromoWindow';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,16 +55,16 @@ const useStyles = makeStyles((theme) => ({
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#34d3e1',
+      light: '#02c9da',
       main: '#02c9da',
-      dark: '#005662',
-      contrastText: '#fddb27',
+      dark: '#02c9da',
+      contrastText: '#ffffff',
     },
     secondary: {
-      light: '#fff59d',
-      main: '#fddb27',
-      dark: '#fbc02d',
-      contrastText: '#005662',
+      light: '#02c9da',
+      main: '#02c9da',
+      dark: '#02c9da',
+      contrastText: '#ffffff',
     },
   },
 });
@@ -96,34 +100,43 @@ export default function ButtonAppBar(props) {
         setValue(newValue);
       }}
       showLabels>
-      <div className={styles.logoContainer}><Logo/></div> 
-      <Divider />
+      <div><UserWindow/></div> 
+      <Divider style={{ marginBottom: '20px'}}/>
         <ListItem component={Link} to="/" value="home" button>
           <ListItemIcon>
-            <HomeRoundedIcon />
+            <Avatar style={{backgroundColor: '#f5f5f5'}} >
+            <HomeRoundedIcon color="primary" />
+            </Avatar>
           </ListItemIcon>
           <ListItemText primary="Home" />
         </ListItem>
         <ListItem component={Link} to="/components/TripList/TripList" value="trip plan" button>
           <ListItemIcon>
-            <BeachAccessRoundedIcon />
+          <Avatar style={{backgroundColor: '#f5f5f5'}} >
+            <BeachAccessRoundedIcon color="primary" />
+            </Avatar>
           </ListItemIcon>
           <ListItemText primary="Trip plan" />
         </ListItem>
         <ListItem component={Link} to="/" value="home" button>
           <ListItemIcon>
-            <FavoriteRoundedIcon />
+          <Avatar style={{backgroundColor: '#f5f5f5'}} >
+            <FavoriteRoundedIcon color="primary"/>
+            </Avatar>
           </ListItemIcon>
           <ListItemText primary="Favourites" />
         </ListItem>
         <ListItem component={Link} to="/" value="home" button>
           <ListItemIcon>
-            <AccountCircleRoundedIcon  />
+          <Avatar style={{backgroundColor: '#f5f5f5'}} >
+            <AccountCircleRoundedIcon color="primary" />
+            </Avatar>
           </ListItemIcon>
           <ListItemText primary="My pannel" />
         </ListItem>
       </List>
-      <Divider />
+      <Divider style={{ marginTop: '20px'}}/>
+      <PromoWindow/>
     </div>
   );
 
@@ -139,7 +152,9 @@ export default function ButtonAppBar(props) {
           </IconButton>
         }
         <div className={styles.logoContainer}><Logo/></div>
-          <Button color="inherit">Login</Button>
+        <Button color="inherit">  Register  </Button>
+        
+        <Button style={{ background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button>
         </Toolbar>
       </AppBar>
       <Drawer open={state.left} onClose={toggleDrawer('left', false)}>{sideList('left')}</Drawer>
