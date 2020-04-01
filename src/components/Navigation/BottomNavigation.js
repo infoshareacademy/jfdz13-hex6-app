@@ -15,16 +15,16 @@ import {Link} from "react-router-dom";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#34d3e1',
+      light: '#02c9da',
       main: '#02c9da',
-      dark: '#005662',
-      contrastText: '#fddb27',
+      dark: '#02c9da',
+      contrastText: '#ffffff',
     },
     secondary: {
-      light: '#fff59d',
-      main: '#fddb27',
-      dark: '#fbc02d',
-      contrastText: '#005662',
+      light: '#02c9da',
+      main: '#02c9da',
+      dark: '#02c9da',
+      contrastText: '#ffffff',
     },
   },
 });
@@ -54,12 +54,11 @@ export default function BottomAppBar() {
         setValue(newValue);
       }}
       showLabels
-      className={classes.root}
     >
-      <BottomNavigationAction component={Link} to="/" value="home" label="Home" icon={<HomeRoundedIcon />} />
-      <BottomNavigationAction component={Link} to="/components/TripList/TripList" value="trip plan" label="Trip plan" icon={<BeachAccessRoundedIcon />} />
+      <BottomNavigationAction component={Link} to="/" value="home" label="Home" icon={<HomeRoundedIcon color="primary" />} />
+      <BottomNavigationAction component={Link} to="/components/TripList/TripList" value="trip plan" label="Trip plan" icon={<BeachAccessRoundedIcon color="primary" />} />
       {/* <BottomNavigationAction label="Favourites" icon={<FavoriteRoundedIcon />} /> */}
-      <BottomNavigationAction label="My panel" icon={<AccountCircleRoundedIcon />} />
+      <BottomNavigationAction label="My panel" icon={<AccountCircleRoundedIcon color="primary" />} />
         </BottomNavigation>
       </AppBar>
       </ThemeProvider>
