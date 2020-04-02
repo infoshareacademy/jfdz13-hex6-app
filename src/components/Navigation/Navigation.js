@@ -73,6 +73,7 @@ export default function ButtonAppBar(props) {
 
   const isMobile = useMediaQuery('(max-width:600px)');
   const isNotMobile = useMediaQuery('(min-width:601px)');
+  const isMobileVertical = useMediaQuery('(min-height:600px)');
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
@@ -136,7 +137,7 @@ export default function ButtonAppBar(props) {
         </ListItem>
       </List>
       <Divider style={{ marginTop: '20px'}}/>
-      <PromoWindow/>
+      {isMobileVertical && <PromoWindow/>}
     </div>
   );
 
