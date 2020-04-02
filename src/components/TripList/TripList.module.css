@@ -9,21 +9,25 @@
   --font-body: 'Source Sans Pro', sans-serif;
   --font-header: 'Asap Condensed', sans-serif; */
 
-.tripListGridContainer_paper{
+.tripList_container {
+    margin: 100px 0;
+}
+
+.tripListItem_paper{
     width: 85%;
     height: auto;
     margin: 30px auto;
     background-color: #f6f6f6
 }
 
-.tripListGridContainer_title {
+.tripListItem_title {
     text-align: left;
     font-size: 2rem;
     font-family: 'Asap Condensed', sans-serif;
     margin: 10px 0 20px 20px;
 }
 
-.tripListGridContainer_button {
+.tripListItem_buttonContainer {
     height: 55%;
     display: flex;
     align-items: flex-end;
@@ -31,7 +35,18 @@
     cursor: pointer;
 }
 
-.tripListGridContainer_price {
+.tripListItem_addFavouriteTrip {
+    border: none;
+    background-color: rgb(255, 255, 255);
+}
+
+.tripListItem_addFavouriteTrip_red {
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: red;
+}
+
+.tripListItem_price {
     margin: 18px 10px 0 0;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.2rem;
@@ -120,7 +135,7 @@
         width: 300px;
     }
 
-    .tripListGridContainer_button {
+    .tripListItem_button {
         align-items: center;
         margin-top: 12px;
     }
@@ -130,20 +145,31 @@
     .photo_img {
         display: none;
     }
+    .tripListItem_buttonContainer {
+        height: auto;
+        margin: 10px 0;
+    }
 
-    .tripListGridContainer_button {
+    .tripListItem_button {
         justify-content: flex-start;
         margin: 0 0 20px 12px;
     }
 }
 
 @media screen and (max-width: 668px) {
-    .tripListGridContainer_title {
+    .tripListItem_title {
         font-size: 1.8rem;
     }
 
-    .tripListGridContainer_button {
+    .tripListItem_buttonContainer {
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .tripListItem_button {
         align-items: flex-start;
+        margin-bottom: 0;
+        margin-top: 10px;
     }
 
     .description_mainContainer {
@@ -155,23 +181,24 @@
         margin: 3px;
     }
 
-    .tripListGridContainer_price {
+    .tripListItem_price {
         font-size: 1.1rem;
-    }
-
-    .tripListGridContainer_button {
-        margin-bottom: 0;
-        margin-top: 10px;
     }
 }
 
 @media screen and (max-width: 510px) {
-    .tripListGridContainer_title {
+    .tripListItem_title {
         font-size: 1.7rem;
         margin-top: 12px;
     }
 
-    .tripListGridContainer_price {
+    .tripListItem_price {
         font-size: 1rem;
+    }
+
+    .tripListItem_buttonContainer {
+        height: auto;
+        justify-content: flex-start;
+        margin: 10px 0 10px 20px;
     }
 }
