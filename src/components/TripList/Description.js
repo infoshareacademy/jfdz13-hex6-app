@@ -18,17 +18,17 @@ export default function Description ({tripListData})  {
           {tripListData.numberOfPeople === "single" ? <PersonIcon className={styles.description_icon}/> : null }
           {tripListData.numberOfPeople === "couple" ? <PeopleIcon className={styles.description_icon}/> : null }
           {tripListData.numberOfPeople === "family with kids" ? <ChildFriendlyIcon className={styles.description_icon}/> : null }
-          For {tripListData.numberOfPeople}
+          {tripListData.numberOfPeople}
           </div> 
           <div className={styles.description_singleElement}>       
-          {tripListData.tripLength === "weekend" ? <TodayIcon className={styles.description_icon}/>: null }
-          {tripListData.tripLength === "week" ? <><TodayIcon className={styles.description_icon}/><EventIcon className={styles.description_icon}/></> : null }
-          During {tripListData.tripLength}
+          {tripListData.tripLength === "weekend" ? <EventIcon className={styles.description_icon}/>: null }
+          {tripListData.tripLength === "5 days" ? <TodayIcon className={styles.description_icon}/> : null }
+          {tripListData.tripLength}
           </div>
           <div className={styles.description_singleElement}>
           {tripListData.seasonTime === "summer" ? <WbSunnyIcon className={styles.description_icon}/> : null }
           {tripListData.seasonTime === "winter" ? <AcUnitIcon className={styles.description_icon}/> : null }
-          In the {tripListData.seasonTime}
+          {tripListData.seasonTime}
           </div>
         </div>
   )

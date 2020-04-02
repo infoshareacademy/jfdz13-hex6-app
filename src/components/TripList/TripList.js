@@ -18,7 +18,6 @@ componentDidMount () {
     .then(tripList => this.setState({tripList}))
 };
 
-
 render () {
   const { tripList } = this.state;
     return (

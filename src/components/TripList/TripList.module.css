@@ -135,24 +135,21 @@
         width: 300px;
     }
 
-    .tripListItem_button {
-        align-items: center;
-        margin-top: 12px;
+    .tripListItem_buttonContainer {
+        height: 45%;
+        align-items: flex-end;
     }
+
 }
 
 @media screen and (max-width: 1036px) {
     .photo_img {
         display: none;
     }
+
     .tripListItem_buttonContainer {
         height: auto;
         margin: 10px 0;
-    }
-
-    .tripListItem_button {
-        justify-content: flex-start;
-        margin: 0 0 20px 12px;
     }
 }
 
@@ -164,12 +161,6 @@
     .tripListItem_buttonContainer {
         height: auto;
         margin: 10px 0;
-    }
-
-    .tripListItem_button {
-        align-items: flex-start;
-        margin-bottom: 0;
-        margin-top: 10px;
     }
 
     .description_mainContainer {
@@ -201,4 +192,27 @@
         justify-content: flex-start;
         margin: 10px 0 10px 20px;
     }
+
+    .moreDetailsWindow_title {
+        font-size: 1.2rem;
+        display: block;
+    }
+
+    .moreDetailsWindow_ratingDiv {
+        margin-top: 10px;
+        height: 10px;
+    }
+
+    .moreDetailsWindow_description {
+        display: none;
+    }
+
+    .moreDetailsWindow_mainDescription {
+        height: 100vh;
+    }
+ 
+    .moreDetailsWindow_siteSlider {
+        display: none;
+    }
+
 }

@@ -32,13 +32,13 @@ export default function MoreDetailsWindow ({tripListData}) {
             <div>{tripListData.name}</div>
             <div className={styles.moreDetailsWindow_ratingDiv}><Rating tripListData={tripListData}/></div>
         </h2>
-        <DialogContent dividers={scroll === 'paper'}>
-            <Description tripListData={tripListData}/>
+        <DialogContent dividers={scroll === 'paper'} className={styles.moreDetailsWindow_description}>
+            <Description  tripListData={tripListData} />
         </DialogContent>
         <DialogContent dividers={scroll === 'paper'} className={styles.moreDetailsWindow_mainDescription} >
             {tripListData.description}
         </DialogContent>
-        <DialogContent dividers={scroll === 'paper'}>
+        <DialogContent dividers={scroll === 'paper'} className={styles.moreDetailsWindow_siteSlider}>
             <SiteSlider tripListData={tripListData}/>
         </DialogContent>
         <DialogContent dividers={scroll === 'paper'} className={styles.moreDetailsWindow_price}>
