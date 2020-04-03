@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Switch, Route} from "react-router-dom";
 import ButtonAppBar from "./components/Navigation/Navigation";
 import CenteredGrid from "./components/TripList/TripList"
-
+import Login from "./components/Login/Login"
 
 
 function App() {
@@ -15,7 +15,9 @@ function App() {
           <ButtonAppBar>
             <div className="container">
               <Switch>
-                <Route path="/components/TripList" component={CenteredGrid} />
+                <Route path="/components/TripList/" component={CenteredGrid} />
+                <Route path="/components/Login/" component={Login} />
+                <Route path="/"/>  
               </Switch>
             </div>
           </ButtonAppBar>

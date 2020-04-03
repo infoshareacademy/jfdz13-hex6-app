@@ -29,10 +29,6 @@ const theme = createMuiTheme({
   },
 });
 
-// import styles from './Navigation.module.css';
-
-// import Avatar from '@material-ui/core/Avatar';
-
 const useStyles = makeStyles(() => ({
   appBar: {
     top: 'auto',

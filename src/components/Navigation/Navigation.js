@@ -154,8 +154,7 @@ export default function ButtonAppBar(props) {
         }
         <div className={styles.logoContainer}><Logo/></div>
         <Button color="inherit">  Register  </Button>
-        
-        <Button style={{ background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button>
+        <Button component={Link} to="/components/Login/Login" value="login" style={{ background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button>
         </Toolbar>
       </AppBar>
       <Drawer open={state.left} onClose={toggleDrawer('left', false)}>{sideList('left')}</Drawer>
