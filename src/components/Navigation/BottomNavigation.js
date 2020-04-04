@@ -6,7 +6,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import BeachAccessRoundedIcon from '@material-ui/icons/BeachAccessRounded';
-import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded';
+// import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 
 import {Link} from "react-router-dom";
@@ -28,10 +28,6 @@ const theme = createMuiTheme({
     },
   },
 });
-
-// import styles from './Navigation.module.css';
-
-// import Avatar from '@material-ui/core/Avatar';
 
 const useStyles = makeStyles(() => ({
   appBar: {

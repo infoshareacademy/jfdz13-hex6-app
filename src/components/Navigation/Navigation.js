@@ -73,6 +73,7 @@ export default function ButtonAppBar(props) {
 
   const isMobile = useMediaQuery('(max-width:600px)');
   const isNotMobile = useMediaQuery('(min-width:601px)');
+  const isMobileVertical = useMediaQuery('(min-height:600px)');
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
@@ -136,7 +137,7 @@ export default function ButtonAppBar(props) {
         </ListItem>
       </List>
       <Divider style={{ marginTop: '20px'}}/>
-      <PromoWindow/>
+      {isMobileVertical && <PromoWindow/>}
     </div>
   );
 
@@ -153,8 +154,7 @@ export default function ButtonAppBar(props) {
         }
         <div className={styles.logoContainer}><Logo/></div>
         <Button color="inherit">  Register  </Button>
-        
-        <Button style={{ background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button>
+        <Button component={Link} to="/components/Login/Login" value="login" style={{ background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button>
         </Toolbar>
       </AppBar>
       <Drawer open={state.left} onClose={toggleDrawer('left', false)}>{sideList('left')}</Drawer>
