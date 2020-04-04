@@ -54,7 +54,7 @@ export default function BottomAppBar() {
       <BottomNavigationAction component={Link} to="/" value="home" label="Home" icon={<HomeRoundedIcon color="primary" />} />
       <BottomNavigationAction component={Link} to="/components/TripList/TripList" value="trip plan" label="Trip plan" icon={<BeachAccessRoundedIcon color="primary" />} />
       {/* <BottomNavigationAction label="Favourites" icon={<FavoriteRoundedIcon />} /> */}
-      <BottomNavigationAction label="My panel" icon={<AccountCircleRoundedIcon color="primary" />} />
+      <BottomNavigationAction component={Link} to="/components/UserPanel/UserPanel" label="My panel" icon={<AccountCircleRoundedIcon color="primary" />} />
         </BottomNavigation>
       </AppBar>
       </ThemeProvider>
