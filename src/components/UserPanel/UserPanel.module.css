@@ -1,0 +1,22 @@
+.avatar {
+  margin: 5px 0;
+  background-image: url("avatar-1.svg"); /*inline src nie działa z svg z jakiegoś powodu*/
+}
+
+.paper {
+  position: relative;
+  padding: 10px;
+  min-height: 350px;
+}
+@media (max-width: 600px) {
+  .paper {
+    min-height: 200px;
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+

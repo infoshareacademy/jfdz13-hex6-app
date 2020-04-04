@@ -127,13 +127,13 @@ export default function ButtonAppBar(props) {
           </ListItemIcon>
           <ListItemText primary="Favourites" />
         </ListItem>
-        <ListItem component={Link} to="/" value="home" button>
+        <ListItem component={Link} to="/components/UserPanel/UserPanel" value="home" button>
           <ListItemIcon>
           <Avatar style={{backgroundColor: '#f5f5f5'}} >
             <AccountCircleRoundedIcon color="primary" />
             </Avatar>
           </ListItemIcon>
-          <ListItemText primary="My pannel" />
+          <ListItemText primary="My panel" />
         </ListItem>
       </List>
       <Divider style={{ marginTop: '20px'}}/>
