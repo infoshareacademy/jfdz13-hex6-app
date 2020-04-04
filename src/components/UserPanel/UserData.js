@@ -33,7 +33,7 @@ export default function UserData() {
     <Paper elevation={1} className={styles.paper}>
       <Typography
         variant="body1"
-        style={{ textAlign: "center", margin: "10px 0" }}
+        style={{ textAlign: "center" }}
       >
         Your Quo Vadis account
       </Typography>
