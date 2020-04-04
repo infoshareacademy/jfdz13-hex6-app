@@ -8,7 +8,7 @@ const FavoriteTripList = () => {
       <Grid container>
         <Grid item>
           <Typography variant="body1" style={{margin: "15px 0"}}>
-            Your favorite trips:
+            Your favorite trip:
           </Typography>
         </Grid>
       </Grid>
