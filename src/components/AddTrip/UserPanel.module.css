@@ -1,0 +1,54 @@
+.avatar {
+  margin: 5px 0;
+}
+
+.avatarContainer {
+  margin-top: 100px;
+}
+
+.photo_paper {
+  height: 550px;
+}
+
+.addMainInformation_paper {
+  height: 550px;
+}
+
+.addMainInformation_div {
+  width: 98%;
+}
+
+.addMainInformation_formControl {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0;
+}
+
+.addDescription_div {
+  width: 98%;
+  margin-left: 10px;
+  padding-top: 10px;
+}
+
+.addDetails_div {
+  width: 80%;
+  margin: auto;
+  height: 330px;
+}
+
+.addDescription_paper {
+  height: 330px;
+}
+
+@media (max-width: 600px) {
+  .paper {
+    min-height: 200px;
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
