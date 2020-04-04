@@ -10,21 +10,28 @@
   --font-header: 'Asap Condensed', sans-serif; */
 
 .tripList_container {
-    margin: 100px 0;
+    margin: 100px 0;  
 }
 
-.tripListItem_paper{
+.tripListItem_container{
     width: 85%;
     height: auto;
     margin: 30px auto;
-    background-color: #f6f6f6
+}
+
+.tripListItem_gridContainer {
+    border: 2px #85dbf2 solid;
+}
+
+.tripListItem_titleContainer {
+    display: flex;
 }
 
 .tripListItem_title {
     text-align: left;
     font-size: 2rem;
     font-family: 'Asap Condensed', sans-serif;
-    margin: 10px 0 20px 20px;
+    margin: 10px 0 20px 10px;
 }
 
 .tripListItem_buttonContainer {
@@ -32,7 +39,6 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    cursor: pointer;
 }
 
 .tripListItem_addFavouriteTrip {
@@ -49,7 +55,8 @@
 .tripListItem_price {
     margin: 18px 10px 0 0;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 1000;
 }
 
 .photo_img {
@@ -65,7 +72,7 @@
     text-align: left;
     font-size: 1rem;
     font-family: 'Source Sans Pro', sans-serif;
-    width: 80%;
+    width: 70%;
     margin: 0 0 0 20px;
 }
 
@@ -103,7 +110,13 @@
 .moreDetailsWindow_buttonText {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.1rem; 
+}
+
+.moreDetailsWindow_buttonText_span {   
+    background-color: #85dbf2;
+    color: #fefefe;
+    padding: 3px;
 }
 
 .moreDetailsWindow_title {
@@ -124,6 +137,7 @@
 
 .moreDetailsWindow_price {
     text-align: right;
+
 }
 
 .moreDetailsWindow_cancelButton {
@@ -158,6 +172,10 @@
         font-size: 1.8rem;
     }
 
+    .tripListItem_title_blue {
+        font-size: 1.8rem;
+    }
+
     .tripListItem_buttonContainer {
         height: auto;
         margin: 10px 0;
@@ -179,6 +197,11 @@
 
 @media screen and (max-width: 510px) {
     .tripListItem_title {
+        font-size: 1.7rem;
+        margin-top: 12px;
+    }
+    
+    .tripListItem_title_blue {
         font-size: 1.7rem;
         margin-top: 12px;
     }
