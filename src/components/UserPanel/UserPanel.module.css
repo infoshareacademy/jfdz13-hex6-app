@@ -1,6 +1,9 @@
+.avatarContainer {
+  /* width: 50px; */
+}
+
 .avatar {
   margin: 5px 0;
-  /* background-image: url("avatar-1.svg"); */
 }
 
 .paper {
@@ -8,11 +11,11 @@
   padding: 10px;
   min-height: 350px;
 }
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .paper {
     min-height: 200px;
   }
-}
+} */
 
 .flex {
   display: flex;

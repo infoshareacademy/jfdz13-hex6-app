@@ -11,7 +11,7 @@ const ProfilePanel = () => {
     <Paper elevation={1} className={styles.paper}>
       <Grid container direction="column" justify="center" alignItems="center">
         <div className={styles.avatarContainer}>
-        <AppAvatar style={{ width: "500px", height: "100px" }}></AppAvatar>
+        <AppAvatar></AppAvatar>
           {/* <Avatar
             alt="avatar"
             src="./avatar-1.png"

@@ -55,7 +55,7 @@ export default function AppAvatar() {
         // variant="dot"
       >
         <Avatar
-          style={{ height: "200px", width: "200px" }}
+          style={{ height: "auto", width: "auto" }}
           alt="Ada"
           src="/Avatars/avatar-1.svg"
         />
