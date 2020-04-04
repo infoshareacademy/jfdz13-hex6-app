@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Grid, Avatar, Typography } from "@material-ui/core";
+import { Paper, Grid, Avatar, Typography, Container } from "@material-ui/core";
 import styles from "./UserPanel.module.css";
 import { RANDOMCALL } from "./randomcall";
 import AppAvatar from "./Avatar"
@@ -20,14 +20,13 @@ const ProfilePanel = () => {
           /> */}
         </div>
         <Typography
-          variant="body1"
+          variant="h4"
           style={{ textAlign: "center", margin: "10px 0" }}
         >
           Hi there, {userName}!
         </Typography>
-        <Typography variant="body1" style={{ textAlign: "center" }}>
           <div>
-            <Typography variant="body2">
+            <Typography variant="h6">
               {RANDOMCALL.filter((randomcall) => {
                 return randomcall.id === randomId;
               }).map((randomcall) => {
@@ -35,7 +34,6 @@ const ProfilePanel = () => {
               })}
             </Typography>
           </div>
-        </Typography>
       </Grid>
     </Paper>
   );

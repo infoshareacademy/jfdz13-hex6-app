@@ -9,15 +9,13 @@ const UserPanel = () => {
   return (
     <>
       <Container style={{ marginTop: "100px" }} maxWidth="lg">
+
         <Grid container spacing={2}>
-          <Grid item xs={4}>
+          <Grid item xs={6}>
             <ProfilePanel />
           </Grid>
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={6}>
             <UserData />
-          </Grid>
-          <Grid item xs={12}>
-            <FavoriteTripList />
           </Grid>
         </Grid>
       </Container>
