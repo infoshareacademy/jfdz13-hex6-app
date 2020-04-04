@@ -12,6 +12,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
 import styles from './TripList.module.css'
+import { Container } from '@material-ui/core';
 
 class TripListItem extends React.Component {
     
@@ -26,22 +27,21 @@ class TripListItem extends React.Component {
     addToFavourite = () => {
         this.setState  ({
             buttonClicked: !this.state.buttonClicked
-        })
-        
+        }) 
     }
 
     render() {
         return (
             <StylesProvider injectFirst> 
-            <Paper className={styles.tripListItem_paper}>
-                <Grid container >
+            <Container className={styles.tripListItem_container}>
+                <Grid container className={styles.tripListItem_gridContainer}>
                 <Grid item>
                     <Photo  tripListData={this.props.tripListData} />
                 </Grid>
                 <Grid item sm container>
                     <Grid item xs>
                     <Grid item>
-                            <div className={styles.tripListItem_title} >
+                            <div className={styles.tripListItem_title}>
                             {this.props.tripListData.name}
                             {(this.state.buttonClicked === false) && <ActionButton className={styles.tripListItem_addFavouriteTrip} content={<FavoriteIcon/>}  onClicked={this.addToFavourite}/>}
                             {(this.state.buttonClicked === true) && <ActionButton className={styles.tripListItem_addFavouriteTrip_red} content={<FavoriteIcon/>}  onClicked={this.addToFavourite}/>}
@@ -60,7 +60,7 @@ class TripListItem extends React.Component {
                     </Grid>
                 </Grid>
                 </Grid>
-            </Paper>
+            </Container>
             </StylesProvider>
         );
     }
