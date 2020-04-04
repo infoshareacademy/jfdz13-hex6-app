@@ -2,6 +2,7 @@ import React from "react";
 import { Paper, Grid, Avatar, Typography } from "@material-ui/core";
 import styles from "./UserPanel.module.css";
 import { RANDOMCALL } from "./randomcall";
+import AppAvatar from "./Avatar"
 
 const ProfilePanel = () => {
   const randomId = Math.floor(Math.random() * 5) + 1;
@@ -10,11 +11,13 @@ const ProfilePanel = () => {
     <Paper elevation={1} className={styles.paper}>
       <Grid container direction="column" justify="center" alignItems="center">
         <div className={styles.avatarContainer}>
-          <Avatar
+        <AppAvatar style={{ width: "500px", height: "100px" }}></AppAvatar>
+          {/* <Avatar
             alt="avatar"
+            src="./avatar-1.png"
             className={styles.avatar}
             style={{ height: "100px", width: "100px" }}
-          />
+          /> */}
         </div>
         <Typography
           variant="body1"

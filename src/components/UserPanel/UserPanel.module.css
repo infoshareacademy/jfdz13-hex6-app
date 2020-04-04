@@ -1,6 +1,6 @@
 .avatar {
   margin: 5px 0;
-  background-image: url("avatar-1.svg"); /*inline src nie działa z svg z jakiegoś powodu*/
+  /* background-image: url("avatar-1.svg"); */
 }
 
 .paper {
