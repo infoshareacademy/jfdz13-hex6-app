@@ -9,11 +9,15 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "core-js": "^3.6.4",
+    "eslint-plugin-flowtype": "^3.13.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-modal-video": "^1.2.3",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
+    "react-scripts": "^3.4.0",
+    "recharts": "^1.8.5",
     "semantic-ui-react": "^0.88.2"
   },
   "scripts": {
@@ -36,5 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "fibers": "^4.0.2",
+    "sass": "^1.26.3"
   }
 }
