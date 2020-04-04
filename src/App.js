@@ -15,13 +15,11 @@ function App() {
         <BrowserRouter>
           <ButtonAppBar>
             <div className="container">
-              <Switch>
+            <Switch>
                 <Route path="/components/TripList/" component={CenteredGrid} />
                 <Route path="/components/Login/" component={Login} />
-                <Route path="/"/>  
-                <Route path="/components/TripList" component={CenteredGrid} />
                 <Route path="/components/UserPanel" component={UserPanel} />
-
+                <Route path="/"/>
               </Switch>
             </div>
           </ButtonAppBar>
