@@ -20,7 +20,7 @@
 }
 
 .tripListItem_gridContainer {
-    border: 2px #85dbf2 solid;
+    border: 1px #f6f6f6 solid;
 }
 
 .tripListItem_titleContainer {
@@ -105,18 +105,6 @@
 
 .slider_sliderBar {
     width: 40%;
-}
-
-.moreDetailsWindow_buttonText {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: bold;
-    font-size: 1.1rem; 
-}
-
-.moreDetailsWindow_buttonText_span {   
-    background-color: #85dbf2;
-    color: #fefefe;
-    padding: 3px;
 }
 
 .moreDetailsWindow_title {
