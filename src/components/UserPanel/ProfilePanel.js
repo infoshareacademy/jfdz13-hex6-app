@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Grid, Avatar, Typography, Container } from "@material-ui/core";
+import { Paper, Grid, Typography,} from "@material-ui/core";
 import styles from "./UserPanel.module.css";
 import { RANDOMCALL } from "./randomcall";
 import AppAvatar from "./Avatar";
