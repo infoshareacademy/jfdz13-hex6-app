@@ -31,11 +31,11 @@
     text-align: left;
     font-size: 2rem;
     font-family: 'Asap Condensed', sans-serif;
-    margin: 10px 0 20px 10px;
+    margin: 20px 0 20px 20px;
 }
 
 .tripListItem_buttonContainer {
-    height: 55%;
+    height: 50%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -138,7 +138,7 @@
     }
 
     .tripListItem_buttonContainer {
-        height: 45%;
+        height: 35%;
         align-items: flex-end;
     }
 
