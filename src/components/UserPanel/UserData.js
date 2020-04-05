@@ -4,9 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import styles from "./UserPanel.module.css";
 import {
   Paper,
-  Grid,
-  Avatar,
-  IconButton,
   Button,
   Typography,
   Container,

@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Grid, Typography } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import styles from "./UserPanel.module.css";
 import TextField from "@material-ui/core/TextField";
 
