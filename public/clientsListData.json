@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Adam Scott",
+        "opinion": "Gdansk - I fall in love with this town and especially with old town. Highly recommend for visiting.",
+        "avatar": "/Avatars/Avatar-male-photo.jpg"
+        
+    },
+    {
+        "id": 2,
+        "name": "Anna and Mark",
+        "opinion": "Lovely place, you must see the city Sopot from the water side. Great place for walking and very relaxing.",
+        "nickname": "/Avatars/Avatar-couple-photo.jpg"
+        
+    },
+    {
+        "id": 3,
+        "name": "Peggy Lui",
+        "opinion": "Really beautiful place, even in the winter (Gdynia).",
+        "nickname": "/Avatars/Avatar-girl-photo.jpg"
+    }
+]

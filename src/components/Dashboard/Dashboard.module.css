@@ -1,21 +1,311 @@
+.dashboardTitle {
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  margin-top: 10vh;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .dashboardContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-    justify-content: space-between;
-    background-color: whitesmoke;
-    flex-wrap: wrap;
-  } 
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  
+}
+
+
+.dashboardContainerLeft {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 5px;
+
+
+}
+.dashboardContainerLeftUp {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+
+.dashboardContainerLeftDown {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.videoBox {
+  border-radius: 5px;
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin-bottom: 15px;
+  
+}
+
+.cityContainer {
+  position: relative;
+  height: 200px;
+  width: 29%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px;
+
+}
+
+.cityName {
+  text-align: center;
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  margin: 10px;
+  padding: 0;
+}
+
+.citySymbols {
+  text-align: center;
+  font-family: "Asap Condensed", sans-serif;
+  font-size: 15px;
+  color: gray;
+  margin: 10px;
+}
 
 .dashboardContainerRight {
   display: flex;
-  flex-direction: row;
-  width: 70vw;
-  height: 100vh;
+  flex-direction: column;
+  width: 35vw;
+  height: 100%;
   align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin: 5px;
+
+}
+
+
+.chartContainer {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+
+}
+
+
+.chartTitle {
+  text-align: center;
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 5px;
+  padding: 0;
+}
+
+.chartDescription {
+  text-align: center;
+  font-family: "Asap Condensed", sans-serif;
+  font-size: 10px;
+  color: gray;
+  margin-top: 40px;
+
+}
+
+
+.opinionBox{
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+ 
+  
+}
+
+.opinionGraphic{
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+
+}
+
+.opinionTitle{
+  text-align: center;
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 5px;
+  margin-top: 20px;
+  padding: 0;
+
+}
+
+@media screen and (max-width: 1024px){
+
+  .dashboardContainerRight {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    height: auto;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin: 5px;
+} 
+
+.chartContainer {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+
+}
+
+}
+
+@media screen and (max-width: 800px){
+
+  .dashboardContainerLeft {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin: 5px;
+  }
+
+  .dashboardContainerRight {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin: 5px;
+} 
+
+.chartContainer {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+
+}
+
+
+.dashboardContainerLeftDown {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  align-items: flex-start;
   justify-content: space-between;
-  background-color:whitesmoke;
   flex-wrap: wrap;
 }
+
+}
+
+@media screen and (max-width: 500px){
+
+
+
+.dashboardContainerLeftDown {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cityContainer {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px;
+  margin-top: 10px;
+
+}
+
+}
+
+@media screen and (max-width: 500px){
+
+  .chartContainer {
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+  
+  }
+  
+  }
+
+  @media screen and (max-height: 505px){
+
+    .dashboardContainerLeft {
+      align-items: center;
+      justify-content: flex-start;
+    
+    
+    }
+    
+    .dashboardContainerRight {
+      align-items: center;
+      justify-content: flex-start;
+    
+    }
+    }
+  
+  

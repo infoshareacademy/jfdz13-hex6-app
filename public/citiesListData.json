@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "symbols": "#Danzig  #Solidarity  #LongMarket  #NeptuneFountain  #amber",
+        "name": "GDAŃSK",
+        "description": "Gdańsk (Danzig in German) is a port city on the Baltic coast of Poland. At the center of its Main Town, reconstructed after WWII, are the colorful facades of Long Market, now home to shops and restaurants. Nearby is Neptune Fountain, a 17th-century symbol of the city topped by a bronze statue of the sea god. Gdańsk is also a center for the world’s amber trade; boutiques throughout the city sell the ossified resin. On Solidarity Square, the European Solidarity Centre tells the story of the shipyard workers’ union that brought down Poland's Communist regime. Gothic St. Mary’s Church is a massive red brick structure that holds 20,000 people. Along the Motƚawa Canal is the National Maritime Museum,which features a restored medieval shipyard crane.",
+        "nickname": "old town"
+        
+    },
+    {
+        "id": 2,
+        "symbols": "#spa  #beach  #woodenPier  #Monciak  #party",
+        "name": "SOPOT",
+        "description": "Sopot is a town on the Baltic Sea in northern Poland. Sopot is known for its health spas, sandy beach and its long wooden pier that extends into the Bay of Gdańsk. The Crooked House is a surreal building modeled on fairy-tale illustrations. It's on Sopot’s pedestrianized main street, Monciak, also called Monte Cassino. Sopot's side streets are lined with art nouveau houses, galleries, shops and cafes. In a square by the seafront, the sprawling Spa House has a pump room and offers samples of the local mineral water. It also contains the National Gallery of Art, showing works from Poland and abroad. Next door, the Sopot Lighthouse has coastal views. To the south, the early-20th-century Villa Claaszen houses the Sopot Museum’s local-history exhibits. To the north is an offshoot of the Archaeological Museum in Gdańsk featuring reconstructed medieval defenses. The Forest Opera amphitheater hosts opera and other music events.",
+        "nickname": "beach resort"
+        
+    },
+    {
+        "id": 3,
+        "symbols": "#KościuszkiSquare  #DarPomorza  #Aquarium",
+        "name": "GDYNIA",
+        "description": "Gdynia is a port city on the Baltic coast of Poland. It’s known for its modernist buildings, including the Museum of the City of Gdynia, which has exhibits about local history. Kościuszki Square, with a distinctive fountain as its center, leads to the waterfront. The WWII destroyer ORP Błyskawica and 1909 tall ship Dar Pomorza, now museums, are moored on the Southern Pier. Sharks and piranhas inhabit Gdynia Aquarium.",
+        "nickname": "modern city"
+    }
+]
