@@ -10,8 +10,8 @@ import styles from "./UserPanel.module.css";
 const AddTripPanel = () => {
   return (
     <>
-      <Container style={{ marginTop: "100px", marginBottom: "100px" }} maxWidth="lg">
-        <Grid container spacing={2}>
+      <Container className={styles.addTripPanel_container} maxWidth="lg">
+        <Grid container spacing={2} className={styles.addTripPanel_mainGridContainer}>
           <Grid item xs={4}>
             <Photo/>
           </Grid>
@@ -25,16 +25,16 @@ const AddTripPanel = () => {
             <AddDescription />
           </Grid>
         </Grid>
-        <Paper style={{ display: "flex", justifyContent: "space-around" }}>
-          <div className={styles.addTripPanel_div}>
-        <Button variant="outlined" color="primary" >
-          EDIT
-        </Button>
-        <Button variant="outlined" color="primary" >
-          SAVE
-        </Button>
-        </div>
-      </Paper>
+        <Paper className={styles.addTripPanel_paper}>
+          <div className={styles.addTripPanel_buttons}>
+            <Button variant="outlined" color="primary" >
+              EDIT
+            </Button>
+            <Button variant="outlined" color="primary" >
+              SAVE
+            </Button>
+           </div>
+        </Paper>
       </Container>
     </>
   );

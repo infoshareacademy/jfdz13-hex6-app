@@ -1,29 +1,50 @@
-.avatar {
-  margin: 5px 0;
+.addTripPanel_container {
+  margin-top: 100px;
+  margin-bottom: 100px; 
 }
 
-.addTripPanel_div {
+.addTripPanel_paper {
+  display: flex; 
+  justify-content: space-around;
+  height: 10vh;
+}
+
+.addTripPanel_buttons {
   padding: 10px;
   width: 50%;
   display: flex;
   justify-content: space-around;
-
-}
-
-.avatarContainer {
-  margin-top: 100px;
 }
 
 .photo_paper {
-  height: 550px;
+  height: 70vh;
 }
 
+.photo_gridContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+.photo_avatar {
+  height: 100px;
+  width: 100px;
+}
+
+.photo_text {
+  margin: 15px 0
+} 
+
 .addMainInformation_paper {
-  height: 550px;
+  height: 70vh;
 }
 
 .addMainInformation_div {
-  width: 98%;
+  width: 97%;
+  margin: 0 auto;
+  padding-top: 10px;
 }
 
 .addMainInformation_formControl {
@@ -32,31 +53,59 @@
   margin: 10px 0;
 }
 
-.addDescription_div {
-  width: 98%;
-  margin-left: 10px;
-  padding-top: 10px;
+.addDetails_paper {
+  height: 45vh;
 }
 
 .addDetails_div {
   width: 80%;
-  margin: auto;
-  height: 330px;
+  margin: 0 auto;
+  padding-top: 10px;
 }
 
 .addDescription_paper {
-  height: 330px;
+  height: 45vh;
 }
 
-@media (max-width: 600px) {
-  .paper {
-    min-height: 200px;
+.addDescription_div {
+  width: 98%;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+@media (max-width: 1050px) {
+  .addTripPanel_mainGridContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .photo_paper {
+    width: 95vw;
+    height: auto;
+  }
+
+  .photo_gridContainer{
+    height: 90%;
+    padding-top: 15px;
+  }
+
+  .addMainInformation_paper {
+    width: 95vw;
+    height: auto;
+  }
+
+  .addDetails_paper {
+    width: 95vw;
+    height: auto;
+  }
+
+  .addDescription_paper {
+    width: 95vw;
+    height: auto;
+  }
+
+  .addTripPanel_paper {
+    width: 95vw;
+    height: auto;
   }
 }
-
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-

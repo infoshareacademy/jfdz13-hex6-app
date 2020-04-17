@@ -9,13 +9,13 @@ const AddDescription = () => {
     <Paper elevation={1} className={styles.addDescription_paper}>
       <div className={styles.addDescription_div}>
         <TextField
-            fullWidth="true"
-            id="outlined-helperText"
-            label="Description"
-            helperText="Description of your trip"
-            variant="outlined"
-            multiline="true"
-            rows='13'
+          fullWidth="true"
+          id="outlined-helperText"
+          label="Description"
+          helperText="Description of your trip"
+          variant="outlined"
+          multiline="true"
+          rows='13'
           />
       </div>
     </Paper>
