@@ -10,9 +10,7 @@ import MoreDetailsWindow from './MoreDetailsWindow'
 import ActionButton from './ActionButton'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
-
 import styles from './TripList.module.css'
-import { Container } from '@material-ui/core';
 
 class TripListItem extends React.Component {
     

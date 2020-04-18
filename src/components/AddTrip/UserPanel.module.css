@@ -3,19 +3,6 @@
   margin-bottom: 100px; 
 }
 
-.addTripPanel_paper {
-  display: flex; 
-  justify-content: space-around;
-  height: 10vh;
-}
-
-.addTripPanel_buttons {
-  padding: 10px;
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-}
-
 .photo_paper {
   height: 70vh;
 }
@@ -73,6 +60,19 @@
   padding-top: 10px;
 }
 
+.buttons_paper {
+  display: flex; 
+  justify-content: space-around;
+  height: 10vh;
+}
+
+.buttons_div {
+  padding: 10px;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
 @media (max-width: 1050px) {
   .addTripPanel_mainGridContainer {
     display: flex;
@@ -104,7 +104,7 @@
     height: auto;
   }
 
-  .addTripPanel_paper {
+  .buttons_paper {
     width: 95vw;
     height: auto;
   }

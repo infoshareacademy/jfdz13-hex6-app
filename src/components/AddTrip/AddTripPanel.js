@@ -4,7 +4,7 @@ import Photo from "./Photo";
 import AddMainInformation from "./AddMainInformation";
 import AddDetails from './AddDetails'
 import AddDescription from './AddDescription'
-import { Container, Button, Paper } from "@material-ui/core";
+import { Container} from "@material-ui/core";
 import styles from "./UserPanel.module.css";
 
 const AddTripPanel = () => {
@@ -25,16 +25,7 @@ const AddTripPanel = () => {
             <AddDescription />
           </Grid>
         </Grid>
-        <Paper className={styles.addTripPanel_paper}>
-          <div className={styles.addTripPanel_buttons}>
-            <Button variant="outlined" color="primary" >
-              EDIT
-            </Button>
-            <Button variant="outlined" color="primary" >
-              SAVE
-            </Button>
-           </div>
-        </Paper>
+
       </Container>
     </>
   );
