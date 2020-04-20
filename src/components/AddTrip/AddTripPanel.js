@@ -6,6 +6,7 @@ import AddDetails from './AddDetails'
 import AddDescription from './AddDescription'
 import { Container} from "@material-ui/core";
 import styles from "./UserPanel.module.css";
+import Buttons from "./Buttons"
 
 const AddTripPanel = () => {
   return (
@@ -25,7 +26,7 @@ const AddTripPanel = () => {
             <AddDescription />
           </Grid>
         </Grid>
-
+        <Buttons />
       </Container>
     </>
   );

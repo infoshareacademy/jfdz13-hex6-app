@@ -12,10 +12,11 @@ class TripList extends React.Component {
 }
 
 componentDidMount () {
-  fetch('/tripListData.json')
+  fetch('https://hex6-app.firebaseio.com/TripList.json')
     .then(results => results)
     .then(results => results.json())
     .then(tripList => this.setState({tripList}))
+    .then(console.log(this.state))
 };
 
 render () {
