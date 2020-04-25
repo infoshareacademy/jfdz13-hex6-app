@@ -25,8 +25,7 @@ export default function MoreDetailsWindow ({tripListData}) {
 
   return (
     <StylesProvider injectFirst> 
-      <Button className={styles.moreDetailsWindow_buttonText} onClick={handleClickOpen('paper')} >
-        <span className={styles.moreDetailsWindow_buttonText_span}>MORE DETAILS</span></Button>
+      <Button variant="outlined" color="primary"  onClick={handleClickOpen('paper')} >MORE DETAILS</Button>
 
       <Dialog  open={open} onClose={handleClose} scroll={scroll} id={MoreDetailsWindow}>
         <h2 className={styles.moreDetailsWindow_title}>

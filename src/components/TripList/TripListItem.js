@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import { StylesProvider } from '@material-ui/core/styles';
 
 import Photo from './Photo';
@@ -9,9 +10,7 @@ import MoreDetailsWindow from './MoreDetailsWindow'
 import ActionButton from './ActionButton'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
-
 import styles from './TripList.module.css'
-import { Container } from '@material-ui/core';
 
 class TripListItem extends React.Component {
     
@@ -32,7 +31,7 @@ class TripListItem extends React.Component {
     render() {
         return (
             <StylesProvider injectFirst> 
-            <Container className={styles.tripListItem_container}>
+            <Paper className={styles.tripListItem_container}>
                 <Grid container className={styles.tripListItem_gridContainer}>
                 <Grid item>
                     <Photo  tripListData={this.props.tripListData} />
@@ -59,7 +58,7 @@ class TripListItem extends React.Component {
                     </Grid>
                 </Grid>
                 </Grid>
-            </Container>
+            </Paper>
             </StylesProvider>
         );
     }
