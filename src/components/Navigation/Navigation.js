@@ -125,7 +125,7 @@ export default function ButtonAppBar(props) {
             <FavoriteRoundedIcon color="primary"/>
             </Avatar>
           </ListItemIcon>
-          <ListItemText primary="Add trip" />
+          <ListItemText primary="Add new trip" />
         </ListItem>
         <ListItem component={Link} to="/components/UserPanel/UserPanel" value="home" button>
           <ListItemIcon>

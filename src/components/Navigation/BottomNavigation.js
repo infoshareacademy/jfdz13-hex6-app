@@ -11,6 +11,9 @@ import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 
 import {Link} from "react-router-dom";
 
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -40,6 +43,17 @@ const useStyles = makeStyles(() => ({
 export default function BottomAppBar() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -52,7 +66,29 @@ export default function BottomAppBar() {
       showLabels
     >
       <BottomNavigationAction component={Link} to="/" value="home" label="Home" icon={<HomeRoundedIcon color="primary" />} />
-      <BottomNavigationAction component={Link} to="/components/TripList/TripList" value="trip plan" label="Trip plan" icon={<BeachAccessRoundedIcon color="primary" />} />
+      <BottomNavigationAction 
+      value="trip plan" label="Trip plan" 
+      icon={<BeachAccessRoundedIcon color="primary"
+      onClick={handleMenu} />} 
+      />
+      <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'center',
+                  horizontal: 'center',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'center',
+                  horizontal: 'center',
+                }}
+                open={open}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose} component={Link} to="/components/TripList/TripList">Find a trip</MenuItem>
+                <MenuItem onClick={handleClose} component={Link} to="/components/AddTrip/AddTripPanel">Add new trip</MenuItem>
+      </Menu>
       {/* <BottomNavigationAction label="Favourites" icon={<FavoriteRoundedIcon />} /> */}
       <BottomNavigationAction component={Link} to="/components/UserPanel/UserPanel" label="My panel" icon={<AccountCircleRoundedIcon color="primary" />} />
         </BottomNavigation>
