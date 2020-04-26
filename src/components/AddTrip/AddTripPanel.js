@@ -8,28 +8,72 @@ import { Container} from "@material-ui/core";
 import styles from "./UserPanel.module.css";
 import Buttons from "./Buttons"
 
-const AddTripPanel = () => {
-  return (
-    <>
-      <Container className={styles.addTripPanel_container} maxWidth="lg">
-        <Grid container spacing={2} className={styles.addTripPanel_mainGridContainer}>
-          <Grid item xs={4}>
-            <Photo/>
-          </Grid>
-          <Grid item xs={12} sm={8}>
-            <AddMainInformation />
-          </Grid>
-          <Grid item xs={4}>
-            <AddDetails />
-          </Grid>
-          <Grid item xs={8}>
-            <AddDescription />
-          </Grid>
-        </Grid>
-        <Buttons />
-      </Container>
-    </>
-  );
+const initialState = {
+  name: "",
+  city: "",
+  numberOfPeople: "",
+  seasonTime: "",
+  tripLength: "",
+  price: 0,
+  rating: 0,
+  description: "",
+  slider: {
+      sport: 0,
+      monuments: 0,
+      party: 0,
+      hotels: 0,
+      restaurants: 0
+  }
 };
+
+class AddTripPanel extends React.Component {
+  state = {
+    ...initialState
+};
+
+handleOnChange = (event) => {
+  event.preventDefault();
+  
+    this.setState({
+        [event.target.name]: event.target.value
+    })
+    console.log(event.target.value)
+};
+
+handleSubmit = () => {
+    fetch('https://hex6-app.firebaseio.com/TripList.json', {
+        method: "POST",
+        body: JSON.stringify(this.state)
+    })
+    .then(() => {
+        // this.props.onFormSubmit();
+        this.setState(initialState);
+    })
+};
+
+  render () {
+    return (
+      <>
+        <Container className={styles.addTripPanel_container} maxWidth="lg">
+          <Grid container spacing={2} className={styles.addTripPanel_mainGridContainer}>
+            <Grid item xs={4}>
+              <Photo/>
+            </Grid>
+            <Grid item xs={12} sm={8}>
+              <AddMainInformation onChange={this.handleOnChange}/>
+            </Grid>
+            <Grid item xs={4}>
+              <AddDetails onChange={this.handleOnChange}/>
+            </Grid>
+            <Grid item xs={8}>
+              <AddDescription onChange={this.handleOnChange}/>
+            </Grid>
+          </Grid>
+          <Buttons onClick={this.handleSubmit}/>
+        </Container>
+      </>
+    );
+  };
+}
 
 export default AddTripPanel;

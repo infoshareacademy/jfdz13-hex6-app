@@ -2,28 +2,41 @@ import React from 'react';
 import styles from './TripList.module.css'
 
 import TripListItem from "./TripListItem"
+import firebase from "firebase";
 
 class TripList extends React.Component {
-  constructor () {
-    super ();
-    this.state = {
-      tripList: [],
-    };
+
+
+state = {
+  tripList: [],
+};
+
+componentDidMount() {
+  this.fetchData();
 }
 
-componentDidMount () {
+fetchData = () => {
   fetch('https://hex6-app.firebaseio.com/TripList.json')
-    .then(results => results)
-    .then(results => results.json())
-    .then(tripList => this.setState({tripList}))
-    .then(console.log(this.state))
+      .then(resp => resp.json())
+      .then(objectTripList => {
+          const keys = Object.keys(objectTripList);
+          const arrayTripList = keys.map(key => {
+              return {
+                  id: key,
+                  ...objectTripList[key]
+              }
+          });
+
+          this.setState({
+              tripList: arrayTripList
+          })
+      })
 };
 
 render () {
-  const { tripList } = this.state;
     return (
       <div className={styles.tripList_container}>
-        {tripList.map(item => (
+        {this.state.tripList.map(item => (
           <TripListItem tripListData={item} key={item.id}/>
         ))}
       </div>

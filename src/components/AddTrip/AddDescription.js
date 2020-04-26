@@ -4,7 +4,7 @@ import styles from "./UserPanel.module.css";
 import TextField from "@material-ui/core/TextField";
 
 
-const AddDescription = () => {
+const AddDescription = ({onChange}) => {
   return (
     <Paper elevation={1} className={styles.addDescription_paper}>
       <div className={styles.addDescription_div}>
@@ -16,6 +16,8 @@ const AddDescription = () => {
           variant="outlined"
           multiline="true"
           rows='13'
+          name="description"
+          onChange={onChange}
           />
       </div>
     </Paper>
