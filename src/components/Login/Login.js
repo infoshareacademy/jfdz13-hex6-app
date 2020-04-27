@@ -45,6 +45,8 @@ class Login extends React.Component {
   state = {
     email: "",
     password: "",
+    firstName: "",
+    lastName: "",
     redirect: false
   };
 
@@ -94,7 +96,7 @@ class Login extends React.Component {
       <UserProvider>
         {user => {
           return user ? (
-            <h2 style={{ textAlign: "center", marginTop: 20 }}>
+            <h2 style={{ textAlign: "center", marginTop: 100 }}>
               You are already logged in!
             </h2>
           ) : (

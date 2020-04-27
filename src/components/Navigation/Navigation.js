@@ -167,10 +167,13 @@ export default function ButtonAppBar(props) {
         <div className={styles.logoContainer}><Logo/></div>
 
         {user
-        ? <Button variant="contained" color="secondary" onClick={handleSignOut}>Sign out</Button>
-        : <Link to="/sign-in"><Button value="login" style={{ background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button></Link>
+        ? <Button variant="contained" style={{ width: "140px", background: 'white', border: '1px solid white', marginLeft: "15px", color: "black" }} color="inherit" onClick={handleSignOut}>Sign out</Button>
+        : 
+        <>
+        <Button component={Link} to="/sign-up" value="register" color="inherit">  Register  </Button> 
+        <Button component={Link} to="/sign-in" value="login" style={{ width: "140px", background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button>
+        </>
         }
-
 
         {/* <Button component={Link} to="/components/Register/Register" value="register" color="inherit">  Register  </Button>
         <Button component={Link} to="/components/Login/Login" value="login" style={{ background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button> */}
