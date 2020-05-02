@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './TripList.module.css'
 
 import TripListItem from "./TripListItem"
+import UserProvider from "../providers/UserProvider";
 
 class TripList extends React.Component {
   constructor () {
@@ -21,11 +22,15 @@ componentDidMount () {
 render () {
   const { tripList } = this.state;
     return (
-      <div className={styles.tripList_container}>
-        {tripList.map(item => (
-          <TripListItem tripListData={item} key={item.id}/>
-        ))}
-      </div>
+      <UserProvider>
+        {user => {
+        return <div className={styles.tripList_container}>
+          {tripList.map(item => (
+            <TripListItem tripListData={item} key={item.id} user={user} />
+          ))}
+        </div>
+        }}
+      </UserProvider>
     )
   } 
 }
