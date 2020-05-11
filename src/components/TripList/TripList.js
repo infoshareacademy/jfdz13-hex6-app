@@ -3,6 +3,7 @@ import styles from './TripList.module.css'
 
 import TripListItem from "./TripListItem"
 import firebase from "firebase";
+import UserProvider from "../providers/UserProvider";
 
 class TripList extends React.Component {
 
@@ -34,11 +35,15 @@ fetchData = () => {
 
 render () {
     return (
-      <div className={styles.tripList_container}>
-        {this.state.tripList.map(item => (
-          <TripListItem tripListData={item} key={item.id}/>
-        ))}
-      </div>
+      <UserProvider>
+        {user => {
+        return <div className={styles.tripList_container}>
+          {tripList.map(item => (
+            <TripListItem tripListData={item} key={item.id} user={user} />
+          ))}
+        </div>
+        }}
+      </UserProvider>
     )
   } 
 }

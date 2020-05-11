@@ -30,6 +30,10 @@ import UserWindow from './UserWindow';
 import Avatar from '@material-ui/core/Avatar';
 import PromoWindow from './PromoWindow';
 
+import firebase from 'firebase';
+import UserProvider from '../providers/UserProvider'
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -88,6 +92,10 @@ export default function ButtonAppBar(props) {
     setState({ ...state, [side]: open });
   };
 
+  const handleSignOut = () => {
+    firebase.auth().signOut();
+};
+
   const sideList = side => (
     <div
       className={classes.list}
@@ -101,7 +109,9 @@ export default function ButtonAppBar(props) {
         setValue(newValue);
       }}
       showLabels>
+
       <div><UserWindow/></div> 
+
       <Divider style={{ marginBottom: '20px'}}/>
         <ListItem component={Link} to="/" value="home" button>
           <ListItemIcon>
@@ -125,7 +135,7 @@ export default function ButtonAppBar(props) {
             <FavoriteRoundedIcon color="primary"/>
             </Avatar>
           </ListItemIcon>
-          <ListItemText primary="Add trip" />
+          <ListItemText primary="Add new trip" />
         </ListItem>
         <ListItem component={Link} to="/components/UserPanel/UserPanel" value="home" button>
           <ListItemIcon>
@@ -142,7 +152,9 @@ export default function ButtonAppBar(props) {
   );
 
 
-  return (
+  return ( <UserProvider>
+    {(user) => {
+    return (
     <div className={classes.root}>
       <ThemeProvider theme={theme}>
       <AppBar style={{ background: '#02c9da'}} position="fixed">
@@ -153,8 +165,18 @@ export default function ButtonAppBar(props) {
           </IconButton>
         }
         <div className={styles.logoContainer}><Logo/></div>
-        <Button color="inherit">  Register  </Button>
-        <Button component={Link} to="/components/Login/Login" value="login" style={{ background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button>
+
+        {user
+        ? <Button variant="contained" style={{ width: "140px", background: 'white', border: '1px solid white', marginLeft: "15px", color: "black" }} color="inherit" onClick={handleSignOut}>Sign out</Button>
+        : 
+        <>
+        <Button component={Link} to="/sign-up" value="register" color="inherit">  Register  </Button> 
+        <Button component={Link} to="/sign-in" value="login" style={{ width: "140px", background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button>
+        </>
+        }
+
+        {/* <Button component={Link} to="/components/Register/Register" value="register" color="inherit">  Register  </Button>
+        <Button component={Link} to="/components/Login/Login" value="login" style={{ background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button> */}
         </Toolbar>
       </AppBar>
       <Drawer open={state.left} onClose={toggleDrawer('left', false)}>{sideList('left')}</Drawer>
@@ -165,7 +187,6 @@ export default function ButtonAppBar(props) {
       {isMobile && <BottomAppBar></BottomAppBar>
       }
       </ThemeProvider>
-    </div>
-
-  );
-}
+    </div> )}}
+</UserProvider>
+  )}
