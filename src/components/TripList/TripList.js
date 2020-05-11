@@ -6,7 +6,6 @@ import firebase from "firebase";
 
 class TripList extends React.Component {
 
-
 state = {
   tripList: [],
 };

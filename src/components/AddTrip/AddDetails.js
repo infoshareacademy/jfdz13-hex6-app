@@ -5,7 +5,7 @@ import { Paper} from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 
-export default function AddDetails({onChange}) {
+export default function AddDetails({onChange, value}) {
 
   return (
     <Paper elevation={1} className={styles.addDetails_paper}>
@@ -22,6 +22,7 @@ export default function AddDetails({onChange}) {
             min={0}
             max={5}
             name="sport"
+            value={value}
             onChange={onChange}
           />
           <Typography  >

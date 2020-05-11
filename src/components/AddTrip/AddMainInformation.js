@@ -9,6 +9,10 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 
+import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import NativeSelect from '@material-ui/core/NativeSelect';
+
 export default function AddMainInformation({onChange}) {
 
   return (
@@ -23,7 +27,19 @@ export default function AddMainInformation({onChange}) {
           name="name"
           onChange={onChange}
         />
-        <TextField
+        <div className={styles.addMainInformation_select}>
+          <FormControl fullWidth = "true">
+            <InputLabel >Destiny</InputLabel>
+              <NativeSelect onChange={onChange} >
+                <option value={""}></option>
+                <option value={"Gdansk"}>Gdańsk</option>
+                <option value={'Gdynia'}>Gdynia</option>
+                <option value={"Sopot"}>Sopot</option>
+              </NativeSelect>
+            <FormHelperText>Destiny of your trip</FormHelperText>
+          </FormControl>
+        </div>
+        {/* <TextField
           fullWidth = "true"
           id="outlined-helperText"
           label="Destiny"
@@ -31,7 +47,7 @@ export default function AddMainInformation({onChange}) {
           variant="outlined"
           name="city"
           onChange={onChange}
-        />
+        /> */}
         <div className={styles.addMainInformation_formControl}>
           <FormControl >
             <FormLabel >Number of people:</FormLabel>

@@ -9,6 +9,7 @@ import styles from "./UserPanel.module.css";
 import Buttons from "./Buttons"
 
 const initialState = {
+  //id dodać !!
   name: "",
   city: "",
   numberOfPeople: "",
@@ -46,7 +47,6 @@ handleSubmit = () => {
         body: JSON.stringify(this.state)
     })
     .then(() => {
-        // this.props.onFormSubmit();
         this.setState(initialState);
     })
 };
@@ -63,7 +63,7 @@ handleSubmit = () => {
               <AddMainInformation onChange={this.handleOnChange}/>
             </Grid>
             <Grid item xs={4}>
-              <AddDetails onChange={this.handleOnChange}/>
+              <AddDetails onChange={this.handleOnChange} value={this.state.value}/>
             </Grid>
             <Grid item xs={8}>
               <AddDescription onChange={this.handleOnChange}/>
