@@ -5,7 +5,7 @@ import { Paper} from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 
-export default function AddDetails({onChange, value}) {
+export default function AddDetails() {
 
   return (
     <Paper elevation={1} className={styles.addDetails_paper}>
@@ -22,8 +22,6 @@ export default function AddDetails({onChange, value}) {
             min={0}
             max={5}
             name="sport"
-            value={value}
-            onChange={onChange}
           />
           <Typography  >
             Monuments
@@ -36,7 +34,7 @@ export default function AddDetails({onChange, value}) {
             min={0}
             max={5}
             name="monuments"
-            onChange={onChange}
+      
           />
           <Typography >
             Party
@@ -49,7 +47,7 @@ export default function AddDetails({onChange, value}) {
             min={0}
             max={5}
             name="party"
-            onChange={onChange}
+  
           />
           <Typography >
             Hotels
@@ -63,7 +61,7 @@ export default function AddDetails({onChange, value}) {
             min={0}
             max={5}
             name="hotels"
-            onChange={onChange}
+  
           />
           <Typography>
             Restaurants
@@ -76,7 +74,7 @@ export default function AddDetails({onChange, value}) {
             min={0}
             max={5}
             name="restaurants"
-            onChange={onChange}
+ 
           />
         </div>
       </div>

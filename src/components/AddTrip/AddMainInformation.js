@@ -30,24 +30,15 @@ export default function AddMainInformation({onChange}) {
         <div className={styles.addMainInformation_select}>
           <FormControl fullWidth = "true">
             <InputLabel >Destiny</InputLabel>
-              <NativeSelect onChange={onChange} >
+              <NativeSelect onChange={onChange} name="city">
                 <option value={""}></option>
-                <option value={"Gdansk"}>Gdańsk</option>
+                <option value={"Gdańsk"}>Gdańsk</option>
                 <option value={'Gdynia'}>Gdynia</option>
                 <option value={"Sopot"}>Sopot</option>
               </NativeSelect>
             <FormHelperText>Destiny of your trip</FormHelperText>
           </FormControl>
         </div>
-        {/* <TextField
-          fullWidth = "true"
-          id="outlined-helperText"
-          label="Destiny"
-          helperText="Destiny of your trip"
-          variant="outlined"
-          name="city"
-          onChange={onChange}
-        /> */}
         <div className={styles.addMainInformation_formControl}>
           <FormControl >
             <FormLabel >Number of people:</FormLabel>

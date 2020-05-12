@@ -18,15 +18,11 @@ const initialState = {
   price: 0,
   rating: 0,
   description: "",
-  slider: {
-      sport: 0,
-      monuments: 0,
-      party: 0,
-      hotels: 0,
-      restaurants: 0
-  },
-
-  photoCity: ""
+  sport: 0,
+  monuments: 0,
+  party: 0,
+  hotels: 0,
+  restaurants: 0
 };
 
 class AddTripPanel extends React.Component {
@@ -41,8 +37,10 @@ handleOnChange = (event) => {
         id: this.generateRandomNumber(),
         [event.target.name]: event.target.value
     })
-  
+  console.log(event.target.name)
+  console.log(event.target.value)
 };
+
 
 generateRandomNumber = () => {
   return Math.floor(Math.random()*100);
@@ -70,7 +68,7 @@ handleSubmit = () => {
               <AddMainInformation onChange={this.handleOnChange}/>
             </Grid>
             <Grid item xs={4}>
-              <AddDetails onChange={this.handleOnChange} value={this.state.value}/>
+              <AddDetails onChange={this.handleOnChange} />
             </Grid>
             <Grid item xs={8}>
               <AddDescription onChange={this.handleOnChange}/>
