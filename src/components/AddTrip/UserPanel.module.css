@@ -4,7 +4,7 @@
 }
 
 .photo_paper {
-  height: 70vh;
+  height: 63vh;
 }
 
 .photo_gridContainer {
@@ -16,16 +16,17 @@
 }
 
 .photo_avatar {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
 }
 
-.photo_text {
-  margin: 15px 0
-} 
+.photo_cityAvatar {
+  width: 95%;
+  border-radius: 50%;
+}
 
 .addMainInformation_paper {
-  height: 70vh;
+  height: 63vh;
 }
 
 .addMainInformation_div {
@@ -90,7 +91,12 @@
 
   .photo_gridContainer{
     height: 90%;
-    padding-top: 15px;
+  }
+
+  .photo_cityAvatar {
+    width: 50%;
+    border-radius: 8%;
+    padding: 10px;
   }
 
   .addMainInformation_paper {

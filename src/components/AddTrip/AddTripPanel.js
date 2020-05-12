@@ -62,7 +62,7 @@ handleSubmit = () => {
         <Container className={styles.addTripPanel_container} maxWidth="lg">
           <Grid container spacing={2} className={styles.addTripPanel_mainGridContainer}>
             <Grid item xs={4}>
-              <Photo />
+              <Photo city={this.state.city}/>
             </Grid>
             <Grid item xs={12} sm={8}>
               <AddMainInformation onChange={this.handleOnChange}/>
