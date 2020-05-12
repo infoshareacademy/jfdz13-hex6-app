@@ -9,7 +9,7 @@ import styles from "./UserPanel.module.css";
 import Buttons from "./Buttons"
 
 const initialState = {
-  //id dodać !!
+  id: 0,
   name: "",
   city: "",
   numberOfPeople: "",
@@ -38,13 +38,18 @@ handleOnChange = (event) => {
   event.preventDefault();
   
     this.setState({
+        id: this.generateRandomNumber(),
         [event.target.name]: event.target.value
     })
   
 };
 
+generateRandomNumber = () => {
+  return Math.floor(Math.random()*100);
+}
+
 handleSubmit = () => {
-    fetch('https://hex6-app.firebaseio.com/TripList.json', {
+    fetch(`https://hex6-app.firebaseio.com/TripList.json`, {
         method: "POST",
         body: JSON.stringify(this.state)
     })

@@ -12,20 +12,34 @@ class TripList extends React.Component {
     };
 }
 
-componentDidMount () {
-  fetch('/tripListData.json')
-    .then(results => results)
-    .then(results => results.json())
-    .then(tripList => this.setState({tripList}))
+fetchData = () => {
+  fetch('https://hex6-app.firebaseio.com/TripList.json')
+      .then(resp => resp.json())
+      .then(objectTripList => {
+          const keys = Object.keys(objectTripList);
+          const arrayTripList = keys.map(key => {
+              return {
+                  id: key,
+                  ...objectTripList[key]
+              }
+          });
+
+          this.setState({
+            tripList: arrayTripList
+          })
+      })
 };
 
+componentDidMount() {
+  this.fetchData();
+}
+
 render () {
-  const { tripList } = this.state;
     return (
       <UserProvider>
         {user => {
         return <div className={styles.tripList_container}>
-          {tripList.map(item => (
+          {this.state.tripList.map(item => (
             <TripListItem tripListData={item} key={item.id} user={user} />
           ))}
         </div>
