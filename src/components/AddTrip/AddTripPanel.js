@@ -24,7 +24,9 @@ const initialState = {
       party: 0,
       hotels: 0,
       restaurants: 0
-  }
+  },
+
+  photoCity: ""
 };
 
 class AddTripPanel extends React.Component {
@@ -38,7 +40,7 @@ handleOnChange = (event) => {
     this.setState({
         [event.target.name]: event.target.value
     })
-    console.log(event.target.value)
+  
 };
 
 handleSubmit = () => {
@@ -57,7 +59,7 @@ handleSubmit = () => {
         <Container className={styles.addTripPanel_container} maxWidth="lg">
           <Grid container spacing={2} className={styles.addTripPanel_mainGridContainer}>
             <Grid item xs={4}>
-              <Photo/>
+              <Photo />
             </Grid>
             <Grid item xs={12} sm={8}>
               <AddMainInformation onChange={this.handleOnChange}/>

@@ -37,12 +37,6 @@ class TripListItem extends React.Component {
     ).then(() => this.fetchFavs());
   };
 
-  componentDidUpdate() {
-    if (!this.state.isFavsInitialFetched) {
-      this.fetchFavs();
-    }
-  }
-
   fetchFavs = () => {
     if (this.props.user) {
       fetch(
@@ -59,9 +53,12 @@ class TripListItem extends React.Component {
     }
   };
 
+  componentDidMount () {
+    this.fetchFavs();
+  }
+
   render() {
     return (
-      
         <StylesProvider injectFirst>
         <Paper className={styles.tripListItem_container}>
           <Grid container className={styles.tripListItem_gridContainer}>
