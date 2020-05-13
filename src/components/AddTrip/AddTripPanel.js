@@ -7,6 +7,7 @@ import AddDescription from './AddDescription'
 import { Container} from "@material-ui/core";
 import styles from "./UserPanel.module.css";
 import Buttons from "./Buttons"
+import { Paper } from "@material-ui/core";
 
 const initialState = {
   id: 0,
@@ -15,7 +16,7 @@ const initialState = {
   numberOfPeople: "",
   seasonTime: "",
   tripLength: "",
-  price: 0,
+  price: "",
   rating: 0,
   description: "",
   sport: 0,
@@ -30,6 +31,10 @@ class AddTripPanel extends React.Component {
     ...initialState
 };
 
+generateRandomNumber = () => {
+  return Math.floor(Math.random()*1000);
+}
+
 handleOnChange = (event) => {
   event.preventDefault();
   
@@ -41,10 +46,14 @@ handleOnChange = (event) => {
   console.log(event.target.value)
 };
 
+handleOnChangeSlider = name => (event, value) => {
+  event.preventDefault();
 
-generateRandomNumber = () => {
-  return Math.floor(Math.random()*100);
-}
+    this.setState({
+        id: this.generateRandomNumber(),
+        [name]: value
+    });
+};
 
 handleSubmit = () => {
     fetch(`https://hex6-app.firebaseio.com/TripList.json`, {
@@ -54,7 +63,14 @@ handleSubmit = () => {
     .then(() => {
         this.setState(initialState);
     })
+    
 };
+
+handleReset = () => {
+  this.setState ({
+    ...initialState
+  })
+}
 
   render () {
     return (
@@ -65,16 +81,19 @@ handleSubmit = () => {
               <Photo city={this.state.city}/>
             </Grid>
             <Grid item xs={12} sm={8}>
-              <AddMainInformation onChange={this.handleOnChange}/>
+              <AddMainInformation onChange={this.handleOnChange} details={this.state} />
             </Grid>
             <Grid item xs={4}>
-              <AddDetails onChange={this.handleOnChange} />
+              <AddDetails onChange={this.handleOnChangeSlider} details={this.state}/>
             </Grid>
             <Grid item xs={8}>
-              <AddDescription onChange={this.handleOnChange}/>
+              <AddDescription onChange={this.handleOnChange} details={this.state}/>
             </Grid>
           </Grid>
-          <Buttons onClick={this.handleSubmit}/>
+          <Paper className={styles.buttons_paper}>
+             <Buttons onClick={this.handleSubmit} name={"SAVE"}/>
+             <Buttons onClick={this.handleReset} name={"RESET"}/>
+          </Paper>
         </Container>
       </>
     );
