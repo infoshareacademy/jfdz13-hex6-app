@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import countries from "./CountryList";
 import firebase from "firebase";
+import Nickname from "./Nickname";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+
 
 export default function UserData() {
   const classes = useStyles();
@@ -33,7 +36,7 @@ export default function UserData() {
         variant="body1"
         style={{ textAlign: "center" }}
       >
-        Your Quo Vadis account
+        Edit your Quo Vadis information
       </Typography>
       <form className={classes.root} noValidate autoComplete="off">
         <div>
@@ -45,6 +48,7 @@ export default function UserData() {
             helperText="Enter your nickname"
             variant="outlined"
           />
+          <Nickname />
           <TextField
             fullWidth
             id="outlined-helperText"
@@ -86,12 +90,7 @@ export default function UserData() {
   );
 }
 
-// const classes = useStyles();
-// const [country, setCountry] = React.useState("EUR");
 
-// const handleChange = (event) => {
-//   setCountry(event.target.value);
-// };
 
 // class UserData extends React.Component {
   
