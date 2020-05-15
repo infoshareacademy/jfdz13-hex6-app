@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './TripList.module.css'
+import styles from '../TripList/TripList.module.css'
 
-import TripListItem from "./TripListItem"
+import FavouriteTrips from "./FavouriteTripsItem"
 import UserProvider from "../providers/UserProvider";
 
-class TripList extends React.Component {
+class FavouriteTripsMain extends React.Component {
   constructor () {
     super ();
     this.state = {
@@ -40,7 +40,7 @@ render () {
         {user => {
         return <div className={styles.tripList_container}>
           {this.state.tripList.map(item => (
-            <TripListItem tripListData={item} key={item.id} user={user} />
+            <FavouriteTrips tripListData={item} key={item.id} user={user} />
           ))}
         </div>
         }}
@@ -49,4 +49,4 @@ render () {
   } 
 }
 
-export default TripList;
+export default FavouriteTripsMain;

@@ -9,6 +9,7 @@ import Description from "./Description";
 import MoreDetailsWindow from "./MoreDetailsWindow";
 import ActionButton from "./ActionButton";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import UserProvider from "../providers/UserProvider";
 
 import styles from "./TripList.module.css";
 
@@ -36,12 +37,6 @@ class TripListItem extends React.Component {
     ).then(() => this.fetchFavs());
   };
 
-  componentDidUpdate() {
-    if (!this.state.isFavsInitialFetched) {
-      this.fetchFavs();
-    }
-  }
-
   fetchFavs = () => {
     if (this.props.user) {
       fetch(
@@ -58,9 +53,13 @@ class TripListItem extends React.Component {
     }
   };
 
+  componentDidMount () {
+    this.fetchFavs();
+  }
+
   render() {
     return (
-      <StylesProvider injectFirst>
+        <StylesProvider injectFirst>
         <Paper className={styles.tripListItem_container}>
           <Grid container className={styles.tripListItem_gridContainer}>
             <Grid item>
@@ -69,25 +68,33 @@ class TripListItem extends React.Component {
             <Grid item sm container>
               <Grid item xs>
                 <Grid item>
-                  <div className={styles.tripListItem_title}>
+                <div className={styles.tripListItem_title}>
                     {this.props.tripListData.name}
-                    {this.state.favs.includes(this.props.tripListData.id) ===
-                      false && (
-                      <ActionButton
-                        className={styles.tripListItem_addFavouriteTrip}
-                        content={<FavoriteIcon />}
-                        onClicked={this.addToFavourite}
-                      />
-                    )}
-                    {this.state.favs.includes(this.props.tripListData.id) ===
-                      true && (
-                      <ActionButton
-                        className={styles.tripListItem_addFavouriteTrip_red}
-                        content={<FavoriteIcon />}
-                        onClicked={this.removeFromFavourite}
-                      />
-                    )}
-                  </div>
+                  
+                <UserProvider>
+                  {user => { 
+                    return user ? <>
+                      {this.state.favs.includes(this.props.tripListData.id) ===
+                        false && (
+                        <ActionButton
+                          className={styles.tripListItem_addFavouriteTrip}
+                          content={<FavoriteIcon />}
+                          onClicked={this.addToFavourite}
+                        />
+                      )}
+                      {this.state.favs.includes(this.props.tripListData.id) ===
+                        true && (
+                        <ActionButton
+                          className={styles.tripListItem_addFavouriteTrip_red}
+                          content={<FavoriteIcon />}
+                          onClicked={this.removeFromFavourite}
+                        />
+                      )}
+                    </>
+                  : null}}
+                </UserProvider>
+
+                </div>
                 </Grid>
                 <Grid item>
                   <Description tripListData={this.props.tripListData} />

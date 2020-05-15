@@ -4,7 +4,7 @@
 }
 
 .photo_paper {
-  height: 70vh;
+  height: 63vh;
 }
 
 .photo_gridContainer {
@@ -16,22 +16,27 @@
 }
 
 .photo_avatar {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
 }
 
-.photo_text {
-  margin: 15px 0
-} 
+.photo_cityAvatar {
+  width: 95%;
+  border-radius: 50%;
+}
 
 .addMainInformation_paper {
-  height: 70vh;
+  height: 63vh;
 }
 
 .addMainInformation_div {
   width: 97%;
   margin: 0 auto;
   padding-top: 10px;
+}
+
+.addMainInformation_select {
+  margin: 10px;
 }
 
 .addMainInformation_formControl {
@@ -41,7 +46,7 @@
 }
 
 .addDetails_paper {
-  height: 45vh;
+  height: 40vh;
 }
 
 .addDetails_div {
@@ -51,7 +56,7 @@
 }
 
 .addDescription_paper {
-  height: 45vh;
+  height: 40vh;
 }
 
 .addDescription_div {
@@ -62,15 +67,16 @@
 
 .buttons_paper {
   display: flex; 
-  justify-content: space-around;
+  justify-content: center;
   height: 10vh;
+ 
 }
 
 .buttons_div {
   padding: 10px;
-  width: 50%;
+  width: 20vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 @media (max-width: 1050px) {
@@ -86,7 +92,18 @@
 
   .photo_gridContainer{
     height: 90%;
-    padding-top: 15px;
+  }
+
+  .photo_avatar {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+  }
+
+  .photo_cityAvatar {
+    width: 50%;
+    border-radius: 8%;
+    padding: 10px;
   }
 
   .addMainInformation_paper {
