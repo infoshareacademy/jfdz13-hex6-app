@@ -129,14 +129,32 @@ export default function ButtonAppBar(props) {
           </ListItemIcon>
           <ListItemText primary="Trip plan" />
         </ListItem>
-        <ListItem component={Link} to="/components/AddTrip/AddTripPanel" value="add trip" button>
+
+        <UserProvider>
+        {(user) => { return user ?
+          <>
+          <ListItem component={Link} to="/components/AddTrip/AddTripPanel" value="add trip" button>
+            <ListItemIcon>
+            <Avatar style={{backgroundColor: '#f5f5f5'}} >
+              <FavoriteRoundedIcon color="primary"/>
+              </Avatar>
+            </ListItemIcon>
+            <ListItemText primary="Add new trip" />
+          </ListItem>
+
+          <ListItem component={Link} to="/components/FavouriteTripListPage/FavouriteTrips" value="favourite trips" button>
           <ListItemIcon>
           <Avatar style={{backgroundColor: '#f5f5f5'}} >
             <FavoriteRoundedIcon color="primary"/>
             </Avatar>
           </ListItemIcon>
-          <ListItemText primary="Add new trip" />
+          <ListItemText primary="Favourite Trips" />
         </ListItem>
+        </>
+          : null 
+        }}
+        </UserProvider>
+
         <ListItem component={Link} to="/components/UserPanel/UserPanel" value="home" button>
           <ListItemIcon>
           <Avatar style={{backgroundColor: '#f5f5f5'}} >
