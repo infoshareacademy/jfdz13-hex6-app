@@ -18,7 +18,8 @@ const AddDescription = ({onChange, details}) => {
           rows='13'
           name="description"
           value={details.description}
-          onChange={onChange}
+          onChange={onChange} 
+       
           />
       </div>
     </Paper>

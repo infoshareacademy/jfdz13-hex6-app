@@ -132,6 +132,7 @@ export default function ButtonAppBar(props) {
 
         <UserProvider>
         {(user) => { return user ?
+          <>
           <ListItem component={Link} to="/components/AddTrip/AddTripPanel" value="add trip" button>
             <ListItemIcon>
             <Avatar style={{backgroundColor: '#f5f5f5'}} >
@@ -140,7 +141,17 @@ export default function ButtonAppBar(props) {
             </ListItemIcon>
             <ListItemText primary="Add new trip" />
           </ListItem>
-          : null
+
+          <ListItem component={Link} to="/components/FavouriteTripListPage/FavouriteTrips" value="favourite trips" button>
+          <ListItemIcon>
+          <Avatar style={{backgroundColor: '#f5f5f5'}} >
+            <FavoriteRoundedIcon color="primary"/>
+            </Avatar>
+          </ListItemIcon>
+          <ListItemText primary="Favourite Trips" />
+        </ListItem>
+        </>
+          : null 
         }}
         </UserProvider>
 

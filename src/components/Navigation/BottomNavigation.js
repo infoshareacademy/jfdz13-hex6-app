@@ -89,6 +89,8 @@ export default function BottomAppBar() {
               >
                   <MenuItem onClick={handleClose} component={Link} to="/components/TripList/TripList">Find a trip</MenuItem>
                   <MenuItem onClick={handleClose} component={Link} to="/components/AddTrip/AddTripPanel">Add new trip</MenuItem>
+                  <MenuItem onClick={handleClose} component={Link} to="/components/FavouriteTripListPage/FavouriteTrips">Favourite trips</MenuItem>
+
               </Menu>
           </BottomNavigation>
       

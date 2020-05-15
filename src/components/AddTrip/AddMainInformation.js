@@ -28,23 +28,24 @@ export default function AddMainInformation({onChange, details}) {
           name="name"
           onChange={onChange}
           value={details.name}
+      
         />
         <div className={styles.addMainInformation_select}>
           <FormControl fullWidth = "true">
-            <InputLabel >Destiny</InputLabel>
+            <InputLabel >Destination</InputLabel>
               <NativeSelect onChange={onChange} name="city" value={details.city}>
                 <option value={""}></option>
                 <option value={"Gdańsk"}>Gdańsk</option>
                 <option value={'Gdynia'}>Gdynia</option>
                 <option value={"Sopot"}>Sopot</option>
               </NativeSelect>
-            <FormHelperText>Destiny of your trip</FormHelperText>
+            <FormHelperText>Destination of your trip</FormHelperText>
           </FormControl>
         </div>
         <div className={styles.addMainInformation_formControl}>
           <FormControl >
             <FormLabel >Number of people:</FormLabel>
-            <RadioGroup value={details.numberOfPeople}>
+            <RadioGroup value={details.numberOfPeople}  >
               <FormControlLabel value="single" control={<Radio />} label="single" name="numberOfPeople" onChange={onChange}/>
               <FormControlLabel value="couple" control={<Radio />} label="couple" name="numberOfPeople" onChange={onChange}/>
               <FormControlLabel value="family with kids" control={<Radio />} label="family with kids" name="numberOfPeople" onChange={onChange}/>
@@ -52,7 +53,7 @@ export default function AddMainInformation({onChange, details}) {
           </FormControl>
           <FormControl >
             <FormLabel >Season:</FormLabel>
-            <RadioGroup value={details.seasonTime}>
+            <RadioGroup value={details.seasonTime}  >
               <FormControlLabel value="summer" control={<Radio />} label="summer" name="seasonTime" onChange={onChange}/>
               <FormControlLabel value="winter" control={<Radio />} label="winter" name="seasonTime" onChange={onChange}/>
             </RadioGroup>
@@ -67,6 +68,7 @@ export default function AddMainInformation({onChange, details}) {
           name="tripLength"
           value={details.tripLength}
           onChange={onChange}
+          
         />
         <TextField
           fullWidth = "true"
@@ -77,6 +79,7 @@ export default function AddMainInformation({onChange, details}) {
           name="price"
           value={details.price}
           onChange={onChange}
+         
         />
       </div>
     </Paper>

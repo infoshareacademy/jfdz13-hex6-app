@@ -42,8 +42,6 @@ handleOnChange = (event) => {
         id: this.generateRandomNumber(),
         [event.target.name]: event.target.value
     })
-  console.log(event.target.name)
-  console.log(event.target.value)
 };
 
 handleOnChangeSlider = name => (event, value) => {
@@ -71,6 +69,8 @@ handleReset = () => {
     ...initialState
   })
 }
+
+
 
   render () {
     return (

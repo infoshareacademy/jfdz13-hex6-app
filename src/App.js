@@ -8,6 +8,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import UserPanel from "./components/UserPanel/UserPanel";
 import AddTripPanel from "./components/AddTrip/AddTripPanel";
 import Register from "./components/Register/Register";
+import FavouriteTripsMain from './components/FavouriteTripListPage/FavouriteTripsMain';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/components/Register/" component={Register} />
                 <Route path="/components/UserPanel" component={UserPanel} />
                 <Route path="/components/AddTrip" component={AddTripPanel} />
+                <Route path="/components/FavouriteTripListPage" component={FavouriteTripsMain} />
                 <Route path="/" component={Dashboard} />
               </Switch>
             </div>
