@@ -40,23 +40,23 @@ export default function UserData() {
       </Typography>
       <form className={classes.root} noValidate autoComplete="off">
         <div>
-          <TextField
+          {/* <TextField
             fullWidth
             id="outlined-helperText"
             label="Nickname"
             defaultValue="Ada"
             helperText="Enter your nickname"
             variant="outlined"
-          />
+          /> */}
           <Nickname />
-          <TextField
+          {/* <TextField
             fullWidth
             id="outlined-helperText"
             label="Email"
             defaultValue="ada@derp.pl"
             helperText="Enter your email"
             variant="outlined"
-          />
+          /> */}
           <TextField
             fullWidth
             id="outlined-select-currency-native"
@@ -80,10 +80,7 @@ export default function UserData() {
       </form>
       <Container style={{ display: "flex", justifyContent: "space-around" }}>
         <Button variant="outlined" color="primary">
-          EDIT
-        </Button>
-        <Button variant="outlined" color="primary">
-          SAVE
+          CONFIRM UPDATE
         </Button>
       </Container>
     </Paper>
