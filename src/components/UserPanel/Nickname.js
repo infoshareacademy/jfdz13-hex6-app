@@ -47,10 +47,11 @@ class Nickname extends React.Component {
   render() {
     return (
       <TextField
+        InputLabelProps={{ shrink: true }}
         onChange={this.handleOnChange}
         fullWidth
         id="outlined-helperText"
-        label={this.state.value}
+        label="Nickname"
         value={this.state.value}
         helperText="This is your current nickname"
         variant="outlined"

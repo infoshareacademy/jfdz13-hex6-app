@@ -54,6 +54,7 @@ class Country extends React.Component {
     return (
       <TextField
       onChange={this.handleOnChange}
+      InputLabelProps={{ shrink: true }}
       fullWidth
       id="outlined-select-currency-native"
       select
