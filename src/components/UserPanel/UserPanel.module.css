@@ -1,5 +1,11 @@
-.avatarContainer {
-  /* width: 50px; */
+/* .avatarContainer {
+  width: 50px;
+} */
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .avatar {
@@ -17,15 +23,9 @@
   }
 } */
 
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.profilepanel {
+/* .profilepanel {
   border: blue;
-}
+} */
 
 /* UPLOAD AVATAR BUTTON*/
 

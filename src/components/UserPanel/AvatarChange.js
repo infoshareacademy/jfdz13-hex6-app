@@ -1,10 +1,8 @@
 import React from "react";
-import PageWrapper from "./PageWrapper";
 import placeholder from "./avatar-1.svg";
 import firebase from "firebase";
 import { Button, Container, IconButton, Avatar } from "@material-ui/core";
 import styles from "./UserPanel.module.css";
-import PhotoCamera from "@material-ui/icons/PhotoCamera";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -87,12 +85,6 @@ class AvatarChange extends React.Component {
               src={this.state.url || placeholder}
             />
             </Container>
-            {/* <img
-              style={({ width: 80 }, { height: 100 })}
-              src={this.state.url || placeholder}
-              alt="avatar"
-            /> */}
-
             <Button variant="contained" component="label">
               1. Upload File
               <input
