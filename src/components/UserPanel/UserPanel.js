@@ -2,8 +2,9 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 import ProfilePanel from "./ProfilePanel";
 import UserData from "./UserData";
-import { Container } from "@material-ui/core";
+import { Container, Button } from "@material-ui/core";
 import styles from "./UserPanel.module.css";
+import AvatarChange from "./AvatarChange";
 
 const UserPanel = () => {
   return (
@@ -19,6 +20,11 @@ const UserPanel = () => {
           </Grid>
         </Grid>
       </Container>
+      
+      <Container maxWidth="lg">
+        <AvatarChange />
+      </Container>
+
     </>
   );
 };

@@ -3,7 +3,7 @@ import { Paper, Grid, Typography,} from "@material-ui/core";
 import styles from "./UserPanel.module.css";
 import { RANDOMCALL } from "./randomcall";
 import AppAvatar from "./Avatar";
-
+import AvatarChange from "./AvatarChange";
 
 
 const ProfilePanel = () => {
@@ -13,13 +13,13 @@ const ProfilePanel = () => {
     <Paper elevation={1} className={styles.paper}>
       <Grid container direction="column" justify="center" alignItems="center">
         <div className={styles.avatarContainer}>
-          <AppAvatar></AppAvatar>
+        <AvatarChange></AvatarChange>
+          {/* <AppAvatar></AppAvatar> */}
         </div>
         <Typography
           variant="h4"
           style={{ textAlign: "center", margin: "10px 0" }}
         >
-          {/* Hi there, {userName}! */}
           Hi there!
         </Typography>
         <div>
