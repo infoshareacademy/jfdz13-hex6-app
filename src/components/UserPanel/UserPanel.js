@@ -18,7 +18,6 @@ const UserPanel = () => {
             <UserData />
           </Grid>
         </Grid>
-
       </Container>
     </>
   );

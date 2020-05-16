@@ -8,8 +8,6 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Button, Typography, Container } from "@material-ui/core";
 
-
-
 class Nickname extends React.Component {
   state = {
     value: null,
@@ -27,20 +25,31 @@ class Nickname extends React.Component {
   }
 
   fetchNickname = () => {
-    fetch(
-      `https://hex6-app.firebaseio.com/nick/vGjFLrnW1FfMsBJPALtZe4KwNWB3/nick.json`
-    )
-      .then((resp) => resp.json())
-      .then((value) => {
-        this.setState({
-          value,
-        });
-      });
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        fetch(
+          `https://hex6-app.firebaseio.com/nick/${
+            user.uid
+          }/nick.json`
+        )
+          .then((resp) => resp.json())
+          .then((value) => {
+            this.setState({
+              value,
+            });
+          });
+      }
+    });
+  };
+
+  handleOnChange = (event) => {
+    this.props.onNickNameChange(event.target.value);
   };
 
   render() {
     return (
       <TextField
+        onChange={this.handleOnChange}
         fullWidth
         id="outlined-helperText"
         label={this.state.value}

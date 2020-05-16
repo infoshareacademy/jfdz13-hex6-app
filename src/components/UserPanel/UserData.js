@@ -25,10 +25,22 @@ const useStyles = makeStyles((theme) => ({
 export default function UserData() {
   const classes = useStyles();
   const [country, setCountry] = React.useState("EUR");
+  const [newNick, setNewNick] = React.useState("");
+
 
   const handleChange = (event) => {
     setCountry(event.target.value);
   };
+
+  const handleOnNicknameChange = (nick) => {
+    setNewNick(nick)
+  }
+
+  const handleOnClick = () => {
+    fetch(
+      `https://hex6-app.firebaseio.com/nick/${firebase.auth().currentUser.uid}/nick.json`, {method: "PUT", body: JSON.stringify(newNick) })
+      .then((resp) => resp.json())
+  }
 
   return (
     <Paper elevation={1} className={styles.paper}>
@@ -48,7 +60,7 @@ export default function UserData() {
             helperText="Enter your nickname"
             variant="outlined"
           /> */}
-          <Nickname />
+          <Nickname onNickNameChange={handleOnNicknameChange}  />
           {/* <TextField
             fullWidth
             id="outlined-helperText"
@@ -79,7 +91,7 @@ export default function UserData() {
         </div>
       </form>
       <Container style={{ display: "flex", justifyContent: "space-around" }}>
-        <Button variant="outlined" color="primary">
+        <Button onClick={handleOnClick} variant="outlined" color="primary">
           CONFIRM UPDATE
         </Button>
       </Container>
