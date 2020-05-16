@@ -27,16 +27,13 @@ class Nickname extends React.Component {
   fetchNickname = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        fetch(
-          `https://hex6-app.firebaseio.com/nick/${
-            user.uid
-          }/nick.json`
-        )
+        fetch(`https://hex6-app.firebaseio.com/nick/${user.uid}/nick.json`)
           .then((resp) => resp.json())
           .then((value) => {
             this.setState({
               value,
             });
+                console.log(this.state.value);
           });
       }
     });
@@ -44,6 +41,7 @@ class Nickname extends React.Component {
 
   handleOnChange = (event) => {
     this.props.onNickNameChange(event.target.value);
+    this.setState({ value: event.target.value });
   };
 
   render() {
@@ -53,7 +51,7 @@ class Nickname extends React.Component {
         fullWidth
         id="outlined-helperText"
         label={this.state.value}
-        defaultValue={this.state.value}
+        value={this.state.value}
         helperText="This is your current nickname"
         variant="outlined"
       />

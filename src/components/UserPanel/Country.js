@@ -7,12 +7,11 @@ import firebase from "firebase";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Button, Typography, Container } from "@material-ui/core";
-
-
+import countries from "./CountryList";
 
 class Country extends React.Component {
   state = {
-    value: null,
+    value: "null",
     nickname: "bleh",
     // nickname: fetch(`https://hex6-app.firebaseio.com/nick/vGjFLrnW1FfMsBJPALtZe4KwNW.json`, { method: "GET", body: JSON.stringify({nick:this.state.email}) }),
     file: null,
@@ -22,31 +21,44 @@ class Country extends React.Component {
   };
 
   componentDidMount() {
-    this.fetchNickname();
+    this.fetchCountry();
     console.log(this.state.value);
   }
 
   fetchCountry = () => {
-    fetch(
-      `https://hex6-app.firebaseio.com/nick/vGjFLrnW1FfMsBJPALtZe4KwNWB3/nick.json`
-    )
-      .then((resp) => resp.json())
-      .then((value) => {
-        this.setState({
-          value,
-        });
-      });
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        fetch(
+          `https://hex6-app.firebaseio.com/country/${
+            user.uid
+          }/country.json`
+        )
+          .then((resp) => resp.json())
+          .then((value) => {
+            this.setState({
+              value,
+            });
+          });
+      }
+    });
   };
+
+  handleOnChange = (event) => {
+    this.props.onCountryChange(event.target.value);
+    this.setState({ value: event.target.value });
+  };
+
+
 
   render() {
     return (
       <TextField
+      onChange={this.handleOnChange}
       fullWidth
       id="outlined-select-currency-native"
       select
       label="Country"
-      value={country}
-      onChange={handleChange}
+      value={this.state.value}
       SelectProps={{
         native: true,
       }}

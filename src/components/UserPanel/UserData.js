@@ -11,6 +11,7 @@ import {
 import countries from "./CountryList";
 import firebase from "firebase";
 import Nickname from "./Nickname";
+import Country from "./Country";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,8 +25,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function UserData() {
   const classes = useStyles();
-  const [country, setCountry] = React.useState("EUR");
+  const [country, setCountry] = React.useState("");
   const [newNick, setNewNick] = React.useState("");
+  const [newCountry, setNewCountry] = React.useState("");
 
 
   const handleChange = (event) => {
@@ -36,10 +38,20 @@ export default function UserData() {
     setNewNick(nick)
   }
 
+  const handleOnCountryChange = (country2) => {
+    setNewCountry(country2)
+  }
+
+
   const handleOnClick = () => {
     fetch(
       `https://hex6-app.firebaseio.com/nick/${firebase.auth().currentUser.uid}/nick.json`, {method: "PUT", body: JSON.stringify(newNick) })
       .then((resp) => resp.json())
+
+      fetch(
+        `https://hex6-app.firebaseio.com/country/${firebase.auth().currentUser.uid}/country.json`, {method: "PUT", body: JSON.stringify(newCountry) })
+        .then((resp) => resp.json())
+  
   }
 
   return (
@@ -69,7 +81,7 @@ export default function UserData() {
             helperText="Enter your email"
             variant="outlined"
           /> */}
-          <TextField
+          {/* <TextField
             fullWidth
             id="outlined-select-currency-native"
             select
@@ -87,7 +99,8 @@ export default function UserData() {
                 {option.label}
               </option>
             ))}
-          </TextField>
+          </TextField> */}
+          <Country onCountryChange={handleOnCountryChange} />
         </div>
       </form>
       <Container style={{ display: "flex", justifyContent: "space-around" }}>
