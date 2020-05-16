@@ -17,6 +17,7 @@ export const RANDOMCALL = [
   },
   {
     id: 5,
-    text: "You've visited 3 places already!",
+    text: "Feel free to change your avatar",
   },
+
 ];
