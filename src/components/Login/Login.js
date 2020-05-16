@@ -64,8 +64,6 @@ class Login extends React.Component {
         .auth()
         .createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((resp) => {
-          console.log(resp.user.uid)
-
           this.setState({
             redirect: true
           });
