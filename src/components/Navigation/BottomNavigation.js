@@ -5,8 +5,7 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
-import BeachAccessRoundedIcon from '@material-ui/icons/BeachAccessRounded';
-// import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded';
+import BeachAccessRoundedIcon from '@material-ui/icons/BeachAccessRounded';    
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 
 import {Link} from "react-router-dom";
@@ -97,7 +96,6 @@ export default function BottomAppBar() {
         : <BottomNavigation showLabels>
             <BottomNavigationAction component={Link} to="/components/TripList/TripList" label="Trip plan" value="trip plan" icon={<BeachAccessRoundedIcon color="primary" />} />
           </BottomNavigation>
-        {/* <BottomNavigationAction label="Favourites" icon={<FavoriteRoundedIcon />} /> */}
       }}
       </UserProvider>
 

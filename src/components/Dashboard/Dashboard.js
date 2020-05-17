@@ -6,15 +6,12 @@ import styles from './Dashboard.module.css';
 import VideoBox from './VideoBox';
 import MyPieChart from './PieChart';
 import OpinionBox from './OpinionBox';
-import UserProvider from '../providers/UserProvider'
+
 
 export default function Dashboard() {
-  return ( <UserProvider>
-    {(user) => {
     return (
       <>
-      {user
-        ? <Container maxWidth="xl" disableGutters={true}>
+        <Container maxWidth="xl" disableGutters={true}>
         <div className={styles.dashboardContainer}>
   
           <div className={styles.dashboardContainerLeft }>
@@ -32,9 +29,5 @@ export default function Dashboard() {
           </div>
           </div>
       </Container>
-        :  <h1 style={{ marginTop: '100px'}}>HELLLOOOO ZALOGUJ SIE</h1>
-        }
       </>
-)}}
-</UserProvider>
-  )}
+)};

@@ -7,6 +7,8 @@ import MuiDialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+import CardMedia from '@material-ui/core/CardMedia';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 const styles = (theme) => ({
   root: {
@@ -66,11 +68,29 @@ export default function Description({citiesListData}) {
         {citiesListData.name}
         </DialogTitle>
         <DialogContent dividers>
+        <CardMedia
+        component="img"
+        height="200"
+        image={citiesListData.photo}
+        title={citiesListData.name}
+      />
+      <br></br>
           <Typography variant="body2" gutterBottom>
           {citiesListData.description}
           </Typography>
+          <br></br>
+          <Button 
+      variant="outlined"
+      size="small"
+      color="primary"
+      margin="10px"
+      target="_blank" 
+      startIcon={<InstagramIcon />}
+      href= {citiesListData.insta}>
+          VISIT THE CITY</Button>
         </DialogContent>
       </Dialog>
+    
     </div>
   );
 }

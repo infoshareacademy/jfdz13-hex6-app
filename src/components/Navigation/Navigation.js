@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   list: {
-    width: 250,
+    width: 300,
   },
   fullList: {
     width: 'auto',

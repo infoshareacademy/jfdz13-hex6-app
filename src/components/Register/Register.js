@@ -90,10 +90,8 @@ export default function Register() {
                 variant="outlined"
                 required
                 fullWidth
-                name="email"
                 autoComplete="email"
                 name="userEmail"
-            
                 id="userEmail"
        
               />

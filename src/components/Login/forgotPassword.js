@@ -3,13 +3,13 @@ import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
+
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import firebase from "firebase";
-import { Redirect } from "react-router";
+
 import UserProvider from "../providers/UserProvider";
 
 function Copyright() {
@@ -41,60 +41,54 @@ const classes = makeStyles(theme => ({
   }
 }));
 
-class Login extends React.Component {
-  state = {
-    email: "",
-    password: "",
-    firstName: "",
-    lastName: "",
-    redirect: false
-  };
-
-  handleOnChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  };
-
-  handleOnSubmit = event => {
-    event.preventDefault();
-
-    if (this.props.isSignUp) {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then((resp) => {
-          this.setState({
-            redirect: true
-          });
-          fetch(`https://hex6-app.firebaseio.com/nick/${resp.user.uid}.json`, { method: "PUT", body: JSON.stringify({nick:this.state.email}) }) ;
-          fetch(`https://hex6-app.firebaseio.com/country/${resp.user.uid}.json`, { method: "PUT", body: JSON.stringify({country:"Poland"}) }) ;
-
-        })
-        .catch(function(error) {
-          const errorMessage = error.message;
-          alert(errorMessage);
+class Remider extends React.Component {
+    state = {
+        email: "",
+        password: "",
+        firstName: "",
+        lastName: "",
+        redirect: false
+      };
+    
+      handleOnChange = event => {
+        this.setState({
+          [event.target.name]: event.target.value
         });
-    } else {
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then((resp) => {
-          this.setState({
-            redirect: true
-          });
-        })
-        .catch(function(error) {
-          const errorMessage = error.message;
-          alert(errorMessage);
-        });
-    }
-  };
-
+      };
+    
+      handleOnSubmit = event => {
+        event.preventDefault();
+    
+        if (this.props.isSignUp) {
+          firebase
+            .auth()
+            .createUserWithEmailAndPassword(this.state.email, this.state.password)
+            .then(() => {
+              this.setState({
+                redirect: true
+              });
+            })
+            .catch(function(error) {
+              const errorMessage = error.message;
+              alert(errorMessage);
+            });
+        } else {
+          firebase
+            .auth()
+            .signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then(() => {
+              this.setState({
+                redirect: true
+              });
+            })
+            .catch(function(error) {
+              const errorMessage = error.message;
+              alert(errorMessage);
+            });
+        }
+      };
+  
   render() {
-    if (this.state.redirect) {
-      return <Redirect to="/" />;
-    }
     return (
       <UserProvider>
         {user => {
@@ -112,39 +106,24 @@ class Login extends React.Component {
                   src="/Graphics/login.svg"
                 ></img>
                 <Typography component="h1" variant="h5">
-                  {this.props.isSignUp ? "Register" : "Login"}
+                  Forgot password?
                 </Typography>
 
                 <form
                   className={classes.form}
                   noValidate
-                  onSubmit={this.handleOnSubmit}
                 >
                   <TextField
                     variant="outlined"
                     margin="normal"
                     required
                     fullWidth
-                    label="Email Address"
+                    label="enter your email adress"
                     autoFocus
                     id="email"
                     name="email"
                     autoComplete="email"
                     value={this.state.email}
-                    onChange={this.handleOnChange}
-                  />
-                  <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    autoComplete="current-password"
-                    name="password"
-                    label="Password"
-                    type="password"
-                    id="password"
-                    placeholder="Your Password"
-                    value={this.state.password}
                     onChange={this.handleOnChange}
                   />
                   <Button
@@ -154,22 +133,9 @@ class Login extends React.Component {
                     color="primary"
                     className={classes.submit}
                   >
-                    {this.props.isSignUp ? "Register" : "Login"}
+                  send email
                   </Button>
 
-                  <Grid container>
-                    <Grid item xs>
-                      <Link href="/PasswordRemider" variant="body2">
-                        Forgot password?
-                      </Link>
-                    </Grid>
-                    <Grid item>
-                    {this.props.isSignUp
-                    ? <Link href="/sign-in">Do you have an account? Sign In</Link>
-                    : <Link href="/sign-up">Don't have an account? Sign Up</Link>
-                    }
-                    </Grid>
-                  </Grid>
                 </form>
               </div>
               <Box mt={8}>
@@ -183,4 +149,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default Remider;

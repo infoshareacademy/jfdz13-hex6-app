@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "British",
+        "value": "35"
+    },
+    {
+        "id": 2,
+        "name": "Germans",
+        "value": "30" 
+    },
+    {
+        "id": 3,
+        "name": "Scandinavians",
+        "value": "9"
+    },
+    {
+        "id": 4,
+        "name": "Russians",
+        "value": "6"
+    },
+    {
+        "id": 5,
+        "name": "Others",
+        "value": "20"
+    }
+]
