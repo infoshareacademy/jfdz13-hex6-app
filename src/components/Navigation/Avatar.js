@@ -37,6 +37,15 @@ import firebase from "firebase";
   
   
 
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      '& > *': {
+        margin: theme.spacing(1),
+      },
+    },
+  }));
+  
   export default function AppAvatar({user}) {
     const classes = useStyles();
 
