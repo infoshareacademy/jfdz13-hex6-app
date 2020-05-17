@@ -11,11 +11,13 @@ class AboutCity extends React.Component {
 }
 
 componentDidMount () {
-  fetch('/citiesListData.json')
-    .then(results => results)
-    .then(results => results.json())
-    .then(cityList => this.setState({cityList}))
+  fetch('https://hex6-app.firebaseio.com/citiesList.json')
+  .then(results => results)
+  .then(results => results.json())
+  .then(cityList => this.setState({cityList}))
 };
+
+
 
 render () {
   const { cityList } = this.state;
