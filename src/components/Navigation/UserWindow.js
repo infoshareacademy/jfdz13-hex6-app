@@ -18,10 +18,9 @@ import UserProvider from '../providers/UserProvider'
         {user ? <div className={styles.userWindow}>
           <AppAvatar user={user}/>
           <div>
-          <h2 style={{ marginBottom: '5px', marginTop: '0', fontWeight: '600', letterSpacing: '0.05em'}} >Hello Ada!</h2>
-          <h4 style={{ marginTop: '0', marginBottom: '0', fontWeight: '400', color: 'lightgray'}}>Gdańsk, Poland</h4>
+          <h2 style={{ marginBottom: '5px', marginTop: '0', fontWeight: '600', letterSpacing: '0.05em'}} >Hello! <br></br> Have a nice day :D </h2>
           </div>  
-      </div> : <h1> </h1>
+      </div> : null
    }
    </>
    )}}
