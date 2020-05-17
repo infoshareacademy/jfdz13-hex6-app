@@ -58,7 +58,7 @@
 .videoBox {
   border-radius: 5px;
   position: relative;
-  height: auto;
+  height: 450px;
   width: 100%;
   margin-bottom: 15px;
   
@@ -196,6 +196,11 @@
 
 }
 
+.videoBox {
+  height: 300px;
+  
+}
+
 }
 
 @media screen and (max-width: 800px){
@@ -245,6 +250,12 @@
   flex-wrap: wrap;
 }
 
+.videoBox {
+  height: 300px;
+  
+}
+
+
 }
 
 @media screen and (max-width: 500px){
@@ -273,6 +284,12 @@
   margin-top: 10px;
 
 }
+
+.videoBox {
+  height: 190px;
+  
+}
+
 
 }
 

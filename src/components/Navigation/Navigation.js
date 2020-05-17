@@ -32,6 +32,7 @@ import PromoWindow from './PromoWindow';
 
 import firebase from 'firebase';
 import UserProvider from '../providers/UserProvider'
+import DateRangeIcon from '@material-ui/icons/DateRange';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -136,7 +137,7 @@ export default function ButtonAppBar(props) {
           <ListItem component={Link} to="/components/AddTrip/AddTripPanel" value="add trip" button>
             <ListItemIcon>
             <Avatar style={{backgroundColor: '#f5f5f5'}} >
-              <FavoriteRoundedIcon color="primary"/>
+              <DateRangeIcon color="primary"/>
               </Avatar>
             </ListItemIcon>
             <ListItemText primary="Add new trip" />
@@ -150,11 +151,6 @@ export default function ButtonAppBar(props) {
           </ListItemIcon>
           <ListItemText primary="Favourite Trips" />
         </ListItem>
-        </>
-          : null 
-        }}
-        </UserProvider>
-
         <ListItem component={Link} to="/components/UserPanel/UserPanel" value="home" button>
           <ListItemIcon>
           <Avatar style={{backgroundColor: '#f5f5f5'}} >
@@ -163,6 +159,12 @@ export default function ButtonAppBar(props) {
           </ListItemIcon>
           <ListItemText primary="My panel" />
         </ListItem>
+        </>
+          : null 
+        }}
+        </UserProvider>
+
+    
       </List>
       <Divider style={{ marginTop: '20px'}}/>
       {isMobileVertical && <PromoWindow/>}
@@ -192,9 +194,6 @@ export default function ButtonAppBar(props) {
         <Button component={Link} to="/sign-in" value="login" style={{ width: "140px", background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button>
         </>
         }
-
-        {/* <Button component={Link} to="/components/Register/Register" value="register" color="inherit">  Register  </Button>
-        <Button component={Link} to="/components/Login/Login" value="login" style={{ background: '#02c9da', border: '1px solid white', marginLeft: "15px" }} color="inherit">  Login  </Button> */}
         </Toolbar>
       </AppBar>
       <Drawer open={state.left} onClose={toggleDrawer('left', false)}>{sideList('left')}</Drawer>
