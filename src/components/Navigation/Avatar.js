@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Badge from '@material-ui/core/Badge';
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
+import UserProvider from "../providers/UserProvider";
+import firebase from "firebase";
 
   const StyledBadge = withStyles((theme) => ({
     badge: {
@@ -41,23 +43,32 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
     },
   }));
   
-  export default function AppAvatar() {
+  export default function AppAvatar({user}) {
     const classes = useStyles();
-  
+
+  const [avatarUrl, setAvatar] = useState('')
+
+  useEffect(() => {
+      firebase.storage().ref(`avatars/${user.uid}`).getDownloadURL()
+          .then(url => setAvatar(url))
+  });
+
     return (
-      <div className={classes.root} style={{ marginRight: '15px'}}>
-        <StyledBadge
-          overlap="circle"
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'right',
-          }}
-          variant="dot"
-          
-          
-        >
-          <Avatar style={{ height: '50px', width:'50px', marginLeft: '5px'}} alt="Ada" src="/Avatars/avatar-1.svg" />
-        </StyledBadge>
-      </div>
+      <UserProvider>
+        {user => {
+          return <div className={classes.root} style={{ marginRight: '15px'}}>
+          <StyledBadge
+            overlap="circle"
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'right',
+            }}
+            variant="dot"
+          >
+            <Avatar style={{ height: '50px', width:'50px', marginLeft: '5px'}} alt="Ada"  src = {avatarUrl} />
+          </StyledBadge>
+        </div>
+        }}
+      </UserProvider>
     );
   }
