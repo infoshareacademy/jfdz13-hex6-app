@@ -5,7 +5,8 @@ import UserProvider from '../providers/UserProvider'
 
 
 
-    class UserWindow extends React.Component {
+  class UserWindow extends React.Component {
+
 
   render () {
    
@@ -15,7 +16,7 @@ import UserProvider from '../providers/UserProvider'
         return (
         <>
         {user ? <div className={styles.userWindow}>
-          <AppAvatar/>
+          <AppAvatar user={user}/>
           <div>
           <h2 style={{ marginBottom: '5px', marginTop: '0', fontWeight: '600', letterSpacing: '0.05em'}} >Hello Ada!</h2>
           <h4 style={{ marginTop: '0', marginBottom: '0', fontWeight: '400', color: 'lightgray'}}>Gdańsk, Poland</h4>
