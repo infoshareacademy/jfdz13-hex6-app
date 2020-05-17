@@ -118,7 +118,7 @@ class Remider extends React.Component {
                     margin="normal"
                     required
                     fullWidth
-                    label="enter your email adres"
+                    label="enter your email address"
                     autoFocus
                     id="email"
                     name="email"
