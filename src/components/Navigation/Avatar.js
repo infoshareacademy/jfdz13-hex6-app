@@ -1,7 +1,9 @@
 import React from "react";
 import Badge from '@material-ui/core/Badge';
 import Avatar from '@material-ui/core/Avatar';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
+import UserProvider from '../providers/UserProvider'
+
 
   const StyledBadge = withStyles((theme) => ({
     badge: {
@@ -32,20 +34,17 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
     },
   }))(Badge);
   
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      display: 'flex',
-      '& > *': {
-        margin: theme.spacing(1),
-      },
-    },
-  }));
   
-  export default function AppAvatar() {
-    const classes = useStyles();
   
-    return (
-      <div className={classes.root} style={{ marginRight: '15px'}}>
+  class AppAvatar extends React.Component {
+    
+  
+    render () {
+  
+      return ( <UserProvider>
+          {(user) => {
+          return (
+      <div style={{ marginRight: '15px'}}>
         <StyledBadge
           overlap="circle"
           anchorOrigin={{
@@ -59,5 +58,8 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
           <Avatar style={{ height: '50px', width:'50px', marginLeft: '5px'}} alt="Ada" src="/Avatars/avatar-1.svg" />
         </StyledBadge>
       </div>
-    );
-  }
+   )}}
+   </UserProvider>
+   )}};
+
+   export default AppAvatar;

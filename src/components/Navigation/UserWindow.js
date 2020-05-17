@@ -6,21 +6,9 @@ import UserProvider from '../providers/UserProvider'
 
 
     class UserWindow extends React.Component {
-    constructor () {
-      super ();
-      this.state = {
-        cityList: [],
-      };
-  }
-  
-  componentDidMount () {
-    fetch('https://hex6-app.firebaseio.com/citiesList.json')
-    .then(results => results)
-    .then(results => results.json())
-    .then(avatar => this.setState({avatar}))
-  };
+
   render () {
-    const { avatar } = this.state;
+   
 
     return ( <UserProvider>
         {(user) => {
