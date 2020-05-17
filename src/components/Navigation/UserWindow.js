@@ -4,8 +4,25 @@ import AppAvatar from "./Avatar";
 import UserProvider from '../providers/UserProvider'
 
 
-  export default function UserWindow() {
-      return ( <UserProvider>
+
+    class UserWindow extends React.Component {
+    constructor () {
+      super ();
+      this.state = {
+        cityList: [],
+      };
+  }
+  
+  componentDidMount () {
+    fetch('https://hex6-app.firebaseio.com/citiesList.json')
+    .then(results => results)
+    .then(results => results.json())
+    .then(avatar => this.setState({avatar}))
+  };
+  render () {
+    const { avatar } = this.state;
+
+    return ( <UserProvider>
         {(user) => {
         return (
         <>
@@ -20,4 +37,6 @@ import UserProvider from '../providers/UserProvider'
    </>
    )}}
    </UserProvider>
-   )};
+   )}};
+
+   export default UserWindow;
