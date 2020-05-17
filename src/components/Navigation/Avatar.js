@@ -5,6 +5,7 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 import UserProvider from "../providers/UserProvider";
 import firebase from "firebase";
 
+
   const StyledBadge = withStyles((theme) => ({
     badge: {
       backgroundColor: '#44b700',
@@ -34,15 +35,8 @@ import firebase from "firebase";
     },
   }))(Badge);
   
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      display: 'flex',
-      '& > *': {
-        margin: theme.spacing(1),
-      },
-    },
-  }));
   
+
   export default function AppAvatar({user}) {
     const classes = useStyles();
 
