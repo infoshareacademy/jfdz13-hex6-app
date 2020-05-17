@@ -1,10 +1,9 @@
-
 const countries = [
   {
     label: "Afghanistan",
   },
   {
-    label: "Åland Islands",
+    label: "Aland Islands",
   },
   {
     label: "Albania",
@@ -16,7 +15,7 @@ const countries = [
     label: "American Samoa",
   },
   {
-    label: "AndorrA",
+    label: "Andorra",
   },
   {
     label: "Angola",
@@ -346,7 +345,7 @@ const countries = [
     label: "Kiribati",
   },
   {
-    label: 'Korea, Democratic People"S Republic of',
+    label: "Korea, Democratic People's Republic of",
   },
   {
     label: "Korea, Republic of",
@@ -358,7 +357,7 @@ const countries = [
     label: "Kyrgyzstan",
   },
   {
-    label: 'Lao People"S Democratic Republic',
+    label: "Lao People's Democratic Republic",
   },
   {
     label: "Latvia",
@@ -544,7 +543,7 @@ const countries = [
     label: "Russian Federation",
   },
   {
-    label: "RWANDA",
+    label: "Rwanda",
   },
   {
     label: "Saint Helena",
