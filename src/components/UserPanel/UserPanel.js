@@ -1,8 +1,7 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Container } from "@material-ui/core";
 import ProfilePanel from "./ProfilePanel";
 import UserData from "./UserData";
-import { Container } from "@material-ui/core";
 import styles from "./UserPanel.module.css";
 
 const UserPanel = () => {
@@ -18,7 +17,6 @@ const UserPanel = () => {
             <UserData />
           </Grid>
         </Grid>
-
       </Container>
     </>
   );

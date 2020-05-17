@@ -63,10 +63,13 @@ class Login extends React.Component {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then(() => {
+        .then((resp) => {
           this.setState({
             redirect: true
           });
+          fetch(`https://hex6-app.firebaseio.com/nick/${resp.user.uid}.json`, { method: "PUT", body: JSON.stringify({nick:this.state.email}) }) ;
+          fetch(`https://hex6-app.firebaseio.com/country/${resp.user.uid}.json`, { method: "PUT", body: JSON.stringify({country:"Poland"}) }) ;
+
         })
         .catch(function(error) {
           const errorMessage = error.message;
@@ -76,7 +79,7 @@ class Login extends React.Component {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then(() => {
+        .then((resp) => {
           this.setState({
             redirect: true
           });
