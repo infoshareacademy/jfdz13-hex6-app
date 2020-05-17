@@ -32,7 +32,7 @@ class VideoBox extends React.Component {
       //   className={styles.videoBox}>
       //   <source src="Videos/3city.mp4" type="video/mp4" />
       // </video>
-      <iframe className={styles.videoBox} src="https://www.youtube-nocookie.com/embed/nTvKj8kOAWk?&mute=1&frameborder=0&autoplay=1&controls=0&showinfo=0&modestbranding=1&loop=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      <iframe className={styles.videoBox} src="https://www.youtube-nocookie.com/embed/nTvKj8kOAWk?&mute=1&frameborder=0&autoplay=1&controls=0&showinfo=0&modestbranding=1loop=1&playlist=nTvKj8kOAWk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
     );
   }
 }
